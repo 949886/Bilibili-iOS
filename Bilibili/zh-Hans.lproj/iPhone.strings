@@ -1,0 +1,30 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "MEB-Es-OuD"; */
+"MEB-Es-OuD.title" = "Item";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "OZv-JJ-cCI"; */
+"OZv-JJ-cCI.title" = "Root View Controller";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "R5S-nb-b8g"; */
+"R5S-nb-b8g.title" = "Root View Controller";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "box-uL-6Em"; */
+"box-uL-6Em.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Second"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Second";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cby-JN-bzR"; */
+"cby-JN-bzR.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "mnR-a3-qdo"; */
+"mnR-a3-qdo.title" = "Root View Controller";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "zDa-yK-gIG"; */
+"zDa-yK-gIG.title" = "Item";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";
