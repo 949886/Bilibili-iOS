@@ -10,4 +10,9 @@
 
 @implementation UIImage (Extension)
 
+- (UIImage *)centerStretchableImage
+{
+    return [self stretchableImageWithLeftCapWidth:self.size.width * 0.5 topCapHeight:self.size.height * 0.5];
+}
+
 @end

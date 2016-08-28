@@ -41,7 +41,7 @@
     SegmentedControl * segmentedControl = [[SegmentedControl alloc]initWithType:SegmentedControlTypeUnderlined];
     segmentedControl.frame = CGRectMake(0, 0, 400, 44);
     segmentedControl.index = 0;
-    segmentedControl.color = [UIColor colorWithRed:1 green:0.33 blue:0.5 alpha:1];
+    segmentedControl.color = [UIColor colorWithRed:1.000 green:0.329 blue:0.498 alpha:1.000];
     segmentedControl.font = [UIFont fontWithName:@"AvenirNext-UltraLight" size:16];
     segmentedControl.items = @[@"直播", @"推荐", @"番剧", @"分区"].mutableCopy;
     self.navigationItem.titleView = segmentedControl;

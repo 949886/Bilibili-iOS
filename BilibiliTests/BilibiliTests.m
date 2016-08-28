@@ -8,6 +8,13 @@
 
 #import <XCTest/XCTest.h>
 
+
+
+#define CACHE_PATH NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
+#define FILE_PATH(__FILE_NAME__) [CACHE_PATH stringByAppendingString:@"/Download/"#__FILE_NAME__]
+
+@import AFNetworking;
+
 @interface BilibiliTests : XCTestCase
 
 @end
@@ -27,6 +34,21 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    NSMutableDictionary * dict = [NSMutableDictionary new];
+    dict[@"aaaf"] = @"fas";
+    [dict writeToFile:@"/Users/LunarEclipse/Desktop/aaa.plist" atomically:YES];
+    
+//    NSString * path  = [CACHE_PATH stringByAppendingPathComponent:@"Download"];
+//    path  = [path stringByAppendingPathComponent:@"xxx.txt"];
+//    NSLog(@"%@", path);
+//    [[NSFileManager defaultManager] createDirectoryAtPath:FILE_PATH() withIntermediateDirectories:NO attributes:nil error:nil];
+//    
+//    NSOutputStream * ostream = [NSOutputStream outputStreamToFileAtPath:path append:YES];
+//    [ostream open];
+//    NSData * data = [@"data" dataUsingEncoding:NSUTF8StringEncoding];
+//    [ostream write:data.bytes maxLength:data.length];
+//    [ostream close];
 }
 
 - (void)testPerformanceExample {
@@ -35,5 +57,6 @@
         // Put the code you want to measure the time of here.
     }];
 }
+
 
 @end

@@ -81,7 +81,7 @@
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstItem="4hT-nS-L2E" firstAttribute="bottom" secondItem="47c-Ak-YxL" secondAttribute="bottomMargin" id="9nG-z9-ZB2"/>
                             <constraint firstItem="4hT-nS-L2E" firstAttribute="leading" secondItem="47c-Ak-YxL" secondAttribute="leadingMargin" constant="-20" id="B1U-i9-FV7"/>

@@ -9,58 +9,66 @@
 #import <Foundation/Foundation.h>
 
 #import "models.h"
+#import "BilibiliResponse.h"
 
-typedef NS_ENUM(NSInteger, VideoQuarityOptions)
-{
-    VideoQuarityLow = 1,    //流畅
-    VideoQuarityNormal,     //高清
-    VideoQuarityHigh        //超清
-};
-
-
-#pragma mark - API
 
 @class BilibiliResult;
 
 @interface BilibiliAPI : NSObject
 
-#pragma mark GET
+#pragma mark - GET
 
 /* 数据接口 */
 
+#pragma mark User
+
 +(void)getUserWithID:(NSString * _Nonnull)uid
-             success:(void (^ _Nullable)(UserModel * _Nullable))success
-             failure:(void (^ _Nullable)(void))failure;
+             success:(SuccessBlock(UserModel))success
+             failure:(FailureBlock)failure;
 
 +(void)getUserWithName:(NSString * _Nonnull)name
-             success:(void (^ _Nullable)(UserModel * _Nullable))success
-             failure:(void (^ _Nullable)(void))failure;
+               success:(SuccessBlock(UserModel))success
+               failure:(FailureBlock)failure;
 
-+(void)getVideoURLWithCID:(NSString * _Nonnull)cid
-                  quality:(VideoQuarityOptions)quality
-                  success:(void(^ _Nullable)(PlayURLModel * _Nullable))success
+#pragma mark Video
+
++(void)getVideoURLWithAID:(NSString * _Nonnull)aid  //page default is 1
+                  success:(void(^ _Nullable)(NSString * _Nullable url))success
                   failure:(void(^ _Nullable)(void))failure;
+
++(void)getVideoURLWithAID:(NSString * _Nonnull)aid
+                     page:(NSInteger)page   /* 分p，从1开始 */
+                  success:(void(^ _Nullable)(NSString * _Nullable url))success
+                  failure:(void(^ _Nullable)(void))failure;
+
++(void)getAVInfoWithAID:(NSString * _Nonnull)aid
+                success:(void(^ _Nullable)(JJAVModel * _Nullable video))success
+                failure:(void(^ _Nullable)(void))failure;
+
++(NSString * _Nonnull)getVideoURLWithAID:(int)aid page:(int)page;
+
+#pragma mark Home
 
 /* 应用首页数据 */
 
 +(void)getLiveHomepageDataWithSuccess:(void(^ _Nullable)(LiveHomeModel * _Nullable))success failure:(void(^ _Nullable)(void))failure;
 +(void)getRecommendationHomepageDataWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
-                success:(void(^ _Nullable)(RecommendationHomeModel * _Nullable))success
-                failure:(void(^ _Nullable)(void))failure;
+                                       success:(void(^ _Nullable)(RecommendationHomeModel * _Nullable))success
+                                       failure:(void(^ _Nullable)(void))failure;
 +(void)getBangumiHomepageDataWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
-                success:(void(^ _Nullable)(BangumiHomeModel * _Nullable))success
-                failure:(void(^ _Nullable)(void))failure;
+                                success:(void(^ _Nullable)(BangumiHomeModel * _Nullable))success
+                                failure:(void(^ _Nullable)(void))failure;
 
 
-#pragma mark POST
+#pragma mark - POST
 
 +(void)commentVideo:(NSString * _Nonnull)ID content:(NSString * _Nonnull)text
             success:(void (^ _Nullable)(BilibiliResult * _Nullable))success
             failure:(void (^ _Nullable)(void))failure;
 
 +(void)addFavoriteVideo:(NSString * _Nonnull)ID
-                 success:(void(^ _Nullable)(BilibiliResult * _Nullable))success
-                 failure:(void(^ _Nullable)(void))failure;
+                success:(void(^ _Nullable)(BilibiliResult * _Nullable))success
+                failure:(void(^ _Nullable)(void))failure;
 
 +(void)deleteFavoriteVideo:(NSString * _Nonnull)ID
                    success:(void(^ _Nullable)(BilibiliResult * _Nullable))success

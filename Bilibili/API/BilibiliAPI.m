@@ -11,8 +11,8 @@
 #import "APPConstants.h"
 #import "URLConstants.h"
 
-#import "YYKit.h"
-#import "AFNetworking.h"
+#import "BilibiliUserAPI.h"
+#import "BilibiliVideoAPI.h"
 
 //Execute callback block
 #define IfSuccess(_result_) \
@@ -26,70 +26,24 @@ else {if(success) success(_result_);}
 
 #pragma mark - API
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
+@import YYKit;
+@import AFNetworking;
+
 @implementation BilibiliAPI
 
++ (id)forwardingTargetForSelector:(SEL)aSelector
+{
+    if ([[BilibiliVideoAPI class] respondsToSelector:aSelector])
+        return [BilibiliVideoAPI class];
+    if ([[BilibiliUserAPI class] respondsToSelector:aSelector])
+        return [BilibiliUserAPI class];
+    return nil;
+}
+
 #pragma mark GET
-
-/* 数据接口 */
-
-+(void)getUserWithID:(NSString * _Nonnull)uid
-             success:(void (^ _Nullable)(UserModel * _Nullable))success
-             failure:(void (^ _Nullable)(void))failure
-{
-    NSDictionary * parameters = @{@"mid" : uid};
-    [self getUserWithParameters:parameters success:success failure:failure];
-}
-
-+(void)getUserWithName:(NSString * _Nonnull)name
-               success:(void (^ _Nullable)(UserModel * _Nullable))success
-               failure:(void (^ _Nullable)(void))failure
-{
-    NSDictionary * parameters = @{@"user" : name};
-    [self getUserWithParameters:parameters success:success failure:failure];
-}
-
-/*private*/
-+(void)getUserWithParameters:(NSDictionary *)parameters
-                     success:(void (^ _Nullable)(UserModel * _Nullable))success
-                     failure:(void (^ _Nullable)(void))failure
-{
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-    [manager GET:BILIBILI_USER_INFO parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        UserModel * user = [UserModel modelWithDictionary:responseObject];
-        IfSuccess(user);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
-        if(failure) failure();
-    }];
-}
-
-+(void)getVideoURLWithCID:(NSString * _Nonnull)cid
-                  quality:(VideoQuarityOptions)quality
-                  success:(void(^ _Nullable)(PlayURLModel * _Nullable))success
-                  failure:(void(^ _Nullable)(void))failure
-{
-    NSDictionary * parameters = @{@"_device" : @"ios",
-                                  @"_hwid" : @"4d70e86e50b6bfe8",
-                                  @"_tid" : @"0",
-                                  @"_p" : @"1",
-                                  @"_down" : @"0",
-                                  @"appkey" : APP_KEY,
-                                  @"type" : @"mp4",
-                                  @"otype" : @"json",
-                                  @"platform" : PLATFORM,
-                                  @"sign" : SIGN,
-                                  @"quality" : [NSNumber numberWithInteger:quality],
-                                  @"cid" : cid};
-    
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-    [manager GET:BILIBILI_VIDEO_PLAYURL parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        PlayURLModel * playURL = [PlayURLModel modelWithDictionary:responseObject];
-        IfSuccess(playURL);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        if(failure) failure();
-    }];
-}
-
 
 /* 应用数据 */
 
@@ -210,9 +164,6 @@ else {if(success) success(_result_);}
     }];
 }
 
-
-
-
 #pragma mark POST
 
 +(void)commentVideo:(NSString * _Nonnull)ID content:(NSString * _Nonnull)text
@@ -300,6 +251,8 @@ else {if(success) success(_result_);}
 }
 
 @end
+#pragma clang diagnostic pop
+
 
 
 #pragma mark - Feedback

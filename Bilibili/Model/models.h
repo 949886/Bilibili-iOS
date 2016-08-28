@@ -17,15 +17,18 @@
 #import "BangumiModel.h"
 #import "EpisodeModel.h"
 #import "CommentModel.h"
-#import "PlayURLModel.h"
 #import "BannerModel.h"
 #import "LiveModel.h"
 #import "TopicModel.h"
 #import "WebImage.h"
+#import "PlayURLModel.h"
+#import "MPlayURLModel.h"
 
 #import "LiveHomeModel.h"
 #import "RecommendationHomeModel.h"
 #import "BangumiHomeModel.h"
+
+#import "JJAVModel.h"
 
 #pragma mark iPhone
 

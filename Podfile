@@ -17,3 +17,7 @@ pod 'MJRefresh'
 use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'ReactiveCocoa', '= 4.0.0'
+
+#UMeng
+#pod 'UMengSocial'
+#pod 'UMengAnalytics-NO-IDFA'

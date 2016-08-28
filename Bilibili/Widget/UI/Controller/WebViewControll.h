@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UIWebView * webView;
 
--(instancetype)initWithURL:(NSString *)url;
+- (instancetype)initWithURL:(NSString *)url;
+
++ (WebViewControll *)controllerWithURL:(NSString *)url; //Factory Method.
 
 @end

@@ -6,6 +6,9 @@
 //  Copyright © 2016年 LunarEclipse. All rights reserved.
 //
 
+//c1b107428d337928
+//ea85624dfcf12d7cc7b2b3a94fac1f2c
+
 #ifndef SecretConstants_h
 #define SecretConstants_h
 

@@ -10,7 +10,6 @@
 
 @interface UIScreen (Extension)
 
-
 /* iOS7及以前版本[UIScreen mainScreen].bounds属性不会随着屏幕的旋转而改变 */
 -(CGRect)fixedBounds;
 -(CGSize)fixedScreenSize;

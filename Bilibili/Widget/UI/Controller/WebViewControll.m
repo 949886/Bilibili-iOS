@@ -24,6 +24,7 @@
         
         _url = url;
         _webView = [UIWebView new];
+        _webView.delegate = self;
     }
     return self;
 }
@@ -38,8 +39,35 @@
     [self.view addSubview: _webView];
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark Delegate
+
+/* UIWebViewDelegate */
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    return true;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.title = [_webView stringByEvaluatingJavaScriptFromString:@"document.title;"];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
+{
+    
+}
+
 
 @end

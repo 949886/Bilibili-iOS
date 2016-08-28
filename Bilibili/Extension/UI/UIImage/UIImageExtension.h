@@ -10,4 +10,6 @@
 
 @interface UIImage (Extension)
 
+- (UIImage *)centerStretchableImage;
+
 @end

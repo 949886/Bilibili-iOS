@@ -97,6 +97,12 @@
     } failure:nil];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    UIViewController * controller = self.view.superview.viewController;
+    controller.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Button" style:UIBarButtonItemStylePlain target:self action:@selector(callfunc)];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -130,24 +136,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    IPadHomeCell * cell;
+    clock_t clock_start = clock();
     NSString * ID = self.type2CellID[_data.segments[indexPath.section].type];
-    cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+    IPadHomeCell * cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     cell.segmentTitle.text = _data.segments[indexPath.section].title;
     [cell setup:_data.segments[indexPath.section]];
+    clock_t clock_end = clock();
+    NSLog(@"Time: %f",(clock_end-clock_start)/(double)CLOCKS_PER_SEC);
     return cell;
 }
+
 
 /* Tableview Delegate */
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (_data && [_data.segments[indexPath.section].type isEqualToString:@"topic"])
+        return 200;
     if(_data && _data.segments[indexPath.section].elements.count >= 5 )
         return 500;
     if (_data && [_data.segments[indexPath.section].type isEqualToString:@"bangumi"])
         return 400;
-    if (_data && [_data.segments[indexPath.section].type isEqualToString:@"topic"])
-        return 200;
     return 300;
 }
 
@@ -156,7 +165,15 @@
     return 10;
 }
 
-#pragma mark Delegate
+#pragma mark Callback
+
+-(void)callfunc
+{
+    clock_t clock_start = clock();
+    [self.tableView reloadData];
+    clock_t clock_end = clock();
+    NSLog(@"Time: %f",(clock_end-clock_start)/(double)CLOCKS_PER_SEC);
+}
 
 
 @end

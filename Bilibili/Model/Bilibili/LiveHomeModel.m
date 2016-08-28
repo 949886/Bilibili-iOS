@@ -14,7 +14,8 @@
 
 +(NSDictionary *)modelCustomPropertyMapper
 {
-    return @{@"banners" : @"banner"};
+    return @{@"banners" : @"banner",
+             @"recommendData" : @"recommend_data"};
 }
 
 +(NSDictionary *)modelContainerPropertyGenericClass
@@ -58,5 +59,26 @@
 {
     return @{@"ID" : @"id"};
 }
+
+@end
+
+
+@implementation LiveHomeRecommendData
+
++ (NSDictionary *)modelContainerPropertyGenericClass
+{
+    return @{@"lives" : [LiveModel class],
+             @"banner_data" : [LiveHomeRecommendBanner class]};
+}
+
+@end
+
+
+@implementation LiveHomeRecommendBanner
+
+@end
+
+
+@implementation LiveOwner
 
 @end

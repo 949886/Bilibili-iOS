@@ -66,6 +66,8 @@
         _segmentView.type = SegmentViewCategory;
         [_segmentView.collectionView reloadData];
     }
+    
+    
 }
 
 @end
