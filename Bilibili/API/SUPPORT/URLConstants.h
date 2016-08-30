@@ -64,7 +64,7 @@
 
 
 
-//BILIBILI_VIDEO_INFO http://app.bilibili.com/x/view?aid=74490
+//BILIBILI_VIDEO_INFO http://app.bilibili.com/x/v2/view?access_key=fd8aef972c053d0eb920680935482fc6&actionKey=appkey&aid=6024746&appkey=85eb6835b0a1034e&build=3600&device=phone&mobi_app=iphone&platform=ios&sign=f0696237560b7698c474e329a95f91c0&ts=1472409128
 //BILIBILI_VIDEO_PLAYURL http://interface.bilibili.com/playurl?platform=android&_device=android&_hwid=831fc7511fa9aff5&_tid=0&_p=1&_down=0&quality=3&otype=json&appkey=86385cdc024c0f6c&type=mp4&sign=7fed8a9b7b446de4369936b6c1c40c3f&_aid=5216011&cid=8477109
 //BILIBILI_VIDEO_PLAYURL_M http://www.bilibili.com/m/html5?aid=5976369&page=1
 

@@ -77,6 +77,7 @@
 		DF6E260D1D27B922008473FA /* EmoticonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6E25F91D27B922008473FA /* EmoticonManager.m */; };
 		DF6E260E1D27B922008473FA /* EmoticonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6E25FB1D27B922008473FA /* EmoticonModel.m */; };
 		DF6F31161D71DB2E00E1D2BA /* BilibiliAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6F31151D71DB2E00E1D2BA /* BilibiliAPITests.m */; };
+		DF6F31181D735DF800E1D2BA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DF6F31171D735DF800E1D2BA /* README.md */; };
 		DF877CCC1D3957F200ED98BB /* BaseSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF877CC91D3957F200ED98BB /* BaseSegmentView.m */; };
 		DF877CCD1D3957F200ED98BB /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF877CCB1D3957F200ED98BB /* SegmentView.m */; };
 		DF95F7411D2EEA6700BA9E84 /* IPadHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF95F7401D2EEA6700BA9E84 /* IPadHomeViewController.m */; };
@@ -254,6 +255,7 @@
 		DF6E25FA1D27B922008473FA /* EmoticonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmoticonModel.h; sourceTree = "<group>"; };
 		DF6E25FB1D27B922008473FA /* EmoticonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmoticonModel.m; sourceTree = "<group>"; };
 		DF6F31151D71DB2E00E1D2BA /* BilibiliAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BilibiliAPITests.m; sourceTree = "<group>"; };
+		DF6F31171D735DF800E1D2BA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		DF877CC81D3957F200ED98BB /* BaseSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSegmentView.h; sourceTree = "<group>"; };
 		DF877CC91D3957F200ED98BB /* BaseSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSegmentView.m; sourceTree = "<group>"; };
 		DF877CCA1D3957F200ED98BB /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
@@ -944,6 +946,7 @@
 				DF4BF5151D63410500B1A37C /* PrefixHeader.pch */,
 				DF6E25B51D27B7FD008473FA /* Info.plist */,
 				DF6E25A21D27B7FD008473FA /* main.m */,
+				DF6F31171D735DF800E1D2BA /* README.md */,
 				DF2490FA1D33AE95004A6C91 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -1451,6 +1454,7 @@
 				DF6E260D1D27B922008473FA /* EmoticonManager.m in Sources */,
 				DF4B75671D6C7273008B4E4E /* WebViewControll.m in Sources */,
 				DF6E26081D27B922008473FA /* UIImageExtension.m in Sources */,
+				DF6F31181D735DF800E1D2BA /* README.md in Sources */,
 				DF3D41111D35522E00CEA0DE /* IPadHomeCell.m in Sources */,
 				DF95F7411D2EEA6700BA9E84 /* IPadHomeViewController.m in Sources */,
 				DF6E26071D27B922008473FA /* NSStringExtension.m in Sources */,

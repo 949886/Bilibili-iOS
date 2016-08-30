@@ -55,31 +55,13 @@
 @end
 
 
-@class LiveHomeRecommendBanner, LiveOwner;
+@class LiveOwner;
 
 @interface LiveHomeRecommendData : NSObject
 
 @property (nonatomic, strong) NSArray<LiveModel *> *lives;
-@property (nonatomic, strong) NSArray<LiveHomeRecommendBanner *> *banner_data;
+@property (nonatomic, strong) NSArray<LiveModel *> *banner_data;
 @property (nonatomic, strong) LiveHomePartitionInfo * partition;
-
-@end
-
-
-@interface LiveHomeRecommendBanner : NSObject
-
-@property (nonatomic, assign) NSInteger room_id;
-@property (nonatomic, copy) NSString *accept_quality;
-@property (nonatomic, strong) LiveOwner *owner;
-@property (nonatomic, assign) NSInteger check_version;
-@property (nonatomic, copy) NSString *area;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) NSInteger area_id;
-@property (nonatomic, copy) NSString *playurl;
-@property (nonatomic, strong) WebImage *cover;
-@property (nonatomic, assign) NSInteger is_tv;
-@property (nonatomic, assign) NSInteger online;
-@property (nonatomic, assign) NSInteger broadcast_type;
 
 @end
 

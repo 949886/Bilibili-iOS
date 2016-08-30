@@ -68,16 +68,10 @@
 + (NSDictionary *)modelContainerPropertyGenericClass
 {
     return @{@"lives" : [LiveModel class],
-             @"banner_data" : [LiveHomeRecommendBanner class]};
+             @"banner_data" : [LiveModel class]};
 }
 
 @end
-
-
-@implementation LiveHomeRecommendBanner
-
-@end
-
 
 @implementation LiveOwner
 

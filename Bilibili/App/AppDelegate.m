@@ -66,7 +66,6 @@ void handleException(NSException * exception);
 //        
 //    }];
 
-    UIPageControl
     return YES;
 }
 

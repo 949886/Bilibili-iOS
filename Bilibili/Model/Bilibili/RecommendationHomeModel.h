@@ -38,7 +38,7 @@
 @property (nonatomic, copy) NSArray<BannerModel *> * banners;   //广告条幅(因为iPhone端每个分区下都可能会出现广告)
 
 
-/* Computed Properties */
+/* Readonly Properties */
 @property (nonatomic, copy, readonly) NSArray<VideoModel *> * videos;
 @property (nonatomic, copy, readonly) NSArray<LiveModel *> * lives;
 @property (nonatomic, copy, readonly) NSArray<BangumiModel *> * bangumis;
