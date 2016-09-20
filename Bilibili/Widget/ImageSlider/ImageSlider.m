@@ -14,7 +14,7 @@
 
 /* 将变量的值x限定在[0, N), 大于等于N则=x%N , 小于0则等于N-|x % N| (和溢出截断类似)*/
 #define VALUE_RESTRICTION(_value_, _restriction_) \
-((_value_) >= 0) ? (_value_) % (_restriction_) : (_restriction_) + ((_value_) % (_restriction_))
+((_restriction_) > 0) ? (((_value_) >= 0) ? (_value_) % (_restriction_) : (_restriction_) + ((_value_) % (_restriction_))) : 0
 
 @interface ImageSlider ()
 
@@ -28,69 +28,90 @@
 
 @property (nonatomic, assign, readonly) NSInteger itemCount;
 
+@property (nonatomic, strong) dispatch_semaphore_t semaphore;
+
 @end
 
 #pragma mark Initialization
 
 @implementation ImageSlider
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame])
+        [self initialize];
+    return self;
+}
+
 -(instancetype)initWithType:(ImageSliderType)type
 {
-    if (self = [super initWithFrame:CGRectZero])
-    {
-        self.type = type;
-        self.clipsToBounds = YES;
-        
-        //Setup ScrollView
-        _scrollView = [[ImageSliderScroller alloc]initWithFrame:CGRectZero];
-        _scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-        _scrollView.pagingEnabled = YES;
-        _scrollView.clipsToBounds = NO;
-        _scrollView.delegate = self;
-        _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.showsVerticalScrollIndicator = NO;
-        _scrollView.userInteractionEnabled = YES;
-        [self addSubview:_scrollView];
-        
-        //Setup PageControl
-        _pageControl = [UIPageControl new];
-        _pageControl.hidesForSinglePage = YES;
-        _pageControl.pageIndicatorTintColor = [UIColor colorWithRed:1 green:0.33 blue:0.5 alpha:1];
-        [self addSubview:_pageControl];
-        
-        //Initialization
-        _scrollAutomatically = YES;
-        _scrollInfinitely = YES;
-        _scrollInterval = 2.5;
-        
-        _items = [NSMutableArray array];
-        _cells = [NSMutableArray array];
-    }
-    return self;
+    self.type = type;
+    return [self initWithFrame:CGRectZero];
+}
+
+-(void)awakeFromNib
+{
+    [self initialize];
+}
+
+-(void)initialize
+{
+    self.clipsToBounds = YES;
+    
+    //Setup ScrollView
+    _scrollView = [[ImageSliderScroller alloc]initWithFrame:self.bounds];
+    _scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    _scrollView.pagingEnabled = YES;
+    _scrollView.clipsToBounds = NO;
+    _scrollView.delegate = self;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.showsVerticalScrollIndicator = NO;
+    _scrollView.userInteractionEnabled = YES;
+    [self addSubview:_scrollView];
+    
+    //Setup PageControl
+    _pageControl = [UIPageControl new];
+    _pageControl.autoresizingMask = UIViewAutoresizingNone;
+    _pageControl.pageIndicatorTintColor = [UIColor colorWithRed:1 green:0.33 blue:0.5 alpha:1];
+    [self addSubview:_pageControl];
+    
+    //Initialization
+    _scrollAutomatically = YES;
+    _scrollInfinitely = YES;
+    _scrollInterval = 4;    //默认4秒自动翻页
+    
+    _items = [NSMutableArray array];
+    _cells = [NSMutableArray array];
+    
+    //Multi-thread
+    _semaphore = dispatch_semaphore_create(1);
 }
 
 #pragma mark Override
 
 -(void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     //未指定imageSize则一张image默认填充整个view
     if (CGSizeEqualToSize(_imageSize, CGSizeZero))
         _imageSize = self.bounds.size;
 
+    NSInteger multiply = (_items.count >= 3 || _items.count == 0) ? _items.count : 3; //ScrollView的contentSize最小为width的3倍
+    
     _scrollView.frame = CGRectMake((self.frame.size.width -_imageSize.width) / 2, 0, _imageSize.width, _imageSize.height);
-    _scrollView.contentSize = CGSizeMake(_imageSize.width * _items.count, _scrollView.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(_imageSize.width * multiply, _scrollView.frame.size.height);
     _scrollView.contentOffset = CGPointMake(_imageSize.width, 0);
     
-    _pageControl.frame = CGRectMake(self.frame.size.width - 15 * _items.count - 10, self.frame.size.height - 30, _pageControl.numberOfPages * 15, 20);
+    _pageControl.frame = CGRectMake(self.frame.size.width - 8 * _items.count - 15, self.frame.size.height - 15, _items.count * 8, 10);
     _pageControl.numberOfPages = _items.count;
-    
     [self scrollViewDidScroll:_scrollView];
 }
 
 -(void)willMoveToSuperview:(UIView *)newSuperview
 {
-//    if(nil == _timer)
-//        [self setupTimer];
+    if(nil == _timer)
+        [self setupTimer];
     
     if(!newSuperview)
         _timer = nil;
@@ -111,61 +132,83 @@
 -(void)setImages:(NSArray<NSString *> *)images
 {
     if (!images && images.count == 0) return;
+    _pageControl.hidden = NO;
     
-    //图片数必须>=3
-    if (1 == images.count || 2 == images.count)
+    //若只有一张图片，则凑到2张并隐藏PageControl
+    if (1 == images.count)
     {
         NSMutableArray * array = [NSMutableArray array];
-        if (1 == images.count) //若只有一张图片，则凑到三张
-            for (int i = 0; i < 2; ++i)
-                [array addObject:images.firstObject];
-        if (2 == images.count) //若只有两张图片，则凑到四张
-            [array addObjectsFromArray:images];
+        for (int i = 0; i < 2; ++i)
+            [array addObject:images.firstObject];
         _images = array;
+        
+        _pageControl.hidden = YES;
+        _scrollView.scrollEnabled = NO;
+        [self deactivate];
     }
     else _images = images;
     
-    for (NSString * image in images)
+    [_items removeAllObjects];
+
+    [self removeTimer];
+    for (NSString * image in _images)
     {
         NSString * url = [[NSBundle mainBundle] pathForResource:image ofType:nil];
         UIImage * image = [UIImage imageWithContentsOfFile:url];
         [_items addObject:image];
     }
+    [self setupTimer];
     
     if (_urls.count > 0)
         _urls = [NSArray array];
     
     [self setNeedsLayout];
+    [self reloadImages];
 }
 
 -(void)setUrls:(NSArray<NSString *> *)urls
 {
     if (!urls && urls.count == 0) return;
+    _pageControl.hidden = NO;
     
-    //同上，图片数必须>=3
-    if (1 == urls.count || 2 == urls.count)
+    //同上，若只有一张图片，则凑到2张并隐藏PageControl
+    if (1 == urls.count)
     {
         NSMutableArray * array = [NSMutableArray array];
-        if (1 == urls.count)
-            for (int i = 0; i < 2; ++i)
-                [array addObject:urls.firstObject];
-        if (2 == urls.count)
-            [array addObjectsFromArray:urls];
+        for (int i = 0; i < 2; ++i)
+            [array addObject:urls.firstObject];
         _urls = array;
+        
+        _pageControl.hidden = YES;
+        _scrollView.scrollEnabled = NO;
+        [self deactivate];
     }
     else _urls = urls;
     
-    for (NSString * urlString in urls)
-    {
-        __weak typeof(self) weakSelf = self;
-        dispatch_async(dispatch_get_main_queue(), ^{
+     [_items removeAllObjects];
+    
+    //移除计时器，防止滚动出错
+    [self removeTimer];
+    
+    //线程安全
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+        for (NSString * urlString in _urls)
+        {
             NSURL * url = [NSURL URLWithString:urlString];
             UIImage * image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-            [_items addObject:image];
+            if(image != nil)  [_items addObject:image];
             if(_items.count == urls.count)
-                [weakSelf setNeedsLayout];
-        });
-    }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf setNeedsLayout];
+                    [weakSelf reloadImages];
+                    [weakSelf setupTimer];  //重新启动计时器
+                    dispatch_semaphore_signal(_semaphore);
+                });
+        }
+    });
+    
     
     if (_images.count > 0)
         _images = [NSArray array];
@@ -192,18 +235,18 @@
     static BOOL scrollBackward = false;
     
 
-    if (scrollView.contentOffset.x != 0) {
+    if (scrollView.contentOffset.x != 0)
+    {
         if (!scrollForward && scrollView.contentOffset.x > _imageSize.width * 1.5) scrollForward = true;
         else scrollForward = false;
         if (!scrollBackward && scrollView.contentOffset.x < _imageSize.width * 0.5) scrollBackward = true;
         else scrollBackward = false;
     }
     
-    
     /* 每一次滚动都会在此刷新index和image */
     if (scrollForward || scrollBackward)
     {
-        //更改_index，并将ScrollView往后倒退一张图片的宽度（之后根据index重新加载图片以达到无限循环）
+        //更改_index，并将ScrollView的contentOffset往后倒退一张图片的宽度（之后根据index重新加载图片以达到无限循环）
         if (scrollForward) {
             _index += 1;
             _scrollView.contentOffset = CGPointMake(_scrollView.contentOffset.x - _imageSize.width, 0);
@@ -216,24 +259,21 @@
         if (_index < 0) _index = (int)_items.count - 1;
         
         //所有cell基于_index重新加载对应图片
-        for (int i = 0; i < _items.count; ++i)
-        {
-            ImageSliderCell * cell = [self cellAtIndex:i];
-            int index = VALUE_RESTRICTION(_index + i - 1, (int)_items.count);
-            cell.image = _items[index];
-        }
+        [self reloadImages];
         
         _pageControl.currentPage = _index;
     }
     
-    /* Cell 复用 */
+    // Cell 复用
     [self updateCellsForReuse];
     
     // preload left and right cell
     int page = _scrollView.contentOffset.x / _imageSize.width + 0.5;
     for (int i = page - 1; i <= page + 1; i++)
     {
-        if (i >= 0 && i < _items.count)
+        //最少创建3个cell重用
+        NSInteger count = (_items.count >= 3 || _items.count == 0) ? _items.count : 3;
+        if (i >= 0 && i < count)
         {
             ImageSliderCell *cell = [self cellAtIndex:i];
             if (!cell)
@@ -242,7 +282,9 @@
                 cell.center = CGPointMake(_imageSize.width * (i + 0.5) + _padding * i + _padding / 2, cell.center.y);
                 cell.index = i;
                 cell.tag = i;
-                cell.image = _items[VALUE_RESTRICTION(i - 1, (int)_items.count)];
+                int index = VALUE_RESTRICTION(i - 1, (int)_items.count);
+                if(index < _items.count)
+                    cell.image = _items[index];
                 [_scrollView addSubview:cell];
             }
             //else if (!cell.image) cell.image = _items[i];
@@ -282,11 +324,11 @@
     int different = index - _index;
     float contentOffset = _scrollView.contentOffset.x + _imageSize.width * different;
     
-    //避免偏差
+    //調整滚动偏差
     int deviation = (int)contentOffset % (int)_imageSize.width;
-    if (deviation >= 0.1 * _imageSize.width)
+    if (deviation >= _imageSize.width * 0.1)
         contentOffset -= deviation;
-    else if (deviation <= -0.1 * _imageSize.width)
+    else if (deviation <=  _imageSize.width * 0.1)
         contentOffset += deviation;
 
     [_scrollView setContentOffset:CGPointMake(contentOffset, 0) animated:YES];
@@ -294,7 +336,7 @@
 
 -(void)setupTimer
 {
-    if (_scrollAutomatically)
+    if (_timer == nil && _scrollAutomatically)
     {
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:_scrollInterval target:self selector:@selector(automaticScrollCallFunc) userInfo:nil repeats:YES];
         _timer = timer;
@@ -304,7 +346,7 @@
 
 -(void)removeTimer
 {
-    if (_scrollAutomatically)
+    if (_timer != nil)
     {
         [_timer invalidate];
         _timer = nil;
@@ -361,21 +403,32 @@
     return nil;
 }
 
+-(void)reloadImages
+{
+    for (int i = 0; i < _cells.count; ++i)
+    {
+        ImageSliderCell * cell = [self cellAtIndex:i];
+        int index = VALUE_RESTRICTION(_index + i - 1, (int)_items.count);
+        if(index < _items.count)
+            cell.image = _items[index];
+    }
+}
+
 #pragma mark Methods
 
 -(void)activate
 {
-    if (nil == _timer)
-        [self setupTimer];
+    _scrollAutomatically = YES;
+    [self setupTimer];
 }
 
 -(void)deactivate
 {
-    if (nil != _timer)
-        [self removeTimer];
+    _scrollAutomatically = NO;
+    [self removeTimer];
 }
 
--(void)handleEventWithBlock:(void(^)(NSInteger))block
+-(void)handleClickEvent:(void(^)(NSInteger))block
 {
     _didClickSegment = block;
 }

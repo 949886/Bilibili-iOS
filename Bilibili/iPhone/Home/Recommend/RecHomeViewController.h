@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecHomeViewController : UIViewController
+#import "BaseViewController.h"
+
+@interface RecHomeViewController : BaseViewController
 
 @end

@@ -10,7 +10,6 @@
 #import "IPadRecHomeViewController.h"
 
 #import "SegmentedControl.h"
-#import "ImageSlider.h"
 
 #import "extension.h"
 #import "models.h"
@@ -24,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, weak) SegmentedControl * segmentedControl;
-@property (nonatomic, weak) ImageSlider * imageSlider;
 
 @property (nonatomic, strong) IPadRecHomeViewController * recHomeViewController;
 

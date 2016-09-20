@@ -32,13 +32,14 @@ typedef NS_ENUM(NSInteger, ImageSliderType)
 @property (nonatomic, assign) BOOL scrollInfinitely;        //是否无限循环滚动
 @property (nonatomic, assign) BOOL hidePageControl;         //是否隐藏pageControl
 
-@property (nonatomic, copy) void(^didClickSegment)(NSInteger);  //通过此属性设置点击事件
+@property (nonatomic, copy) void(^didClickSegment)(NSInteger);  //可以通过此属性设置点击事件
 
+-(instancetype)initWithFrame:(CGRect)frame;
 -(instancetype)initWithType:(ImageSliderType)type;
 
 -(void)activate;
 -(void)deactivate;
 
--(void)handleEventWithBlock:(void(^)(NSInteger))block;          //同didClickSegment
+-(void)handleClickEvent:(void(^)(NSInteger index))block;          //同didClickSegment
 
 @end

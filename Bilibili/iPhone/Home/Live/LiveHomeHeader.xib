@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LiveHomeHeader">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGq-KV-htg" customClass="ImageSlider">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="120"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="uyH-cM-jOX"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTc-Zg-NPi" customClass="ExButton">
+                    <rect key="frame" x="20" y="128" width="90" height="64"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="关注直播" image="live_home_follow_ico">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickFollowButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="4y2-hn-PRw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kf-ij-wlg" customClass="ExButton">
+                    <rect key="frame" x="110" y="128" width="90" height="64"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="直播中心" image="live_home_center_ico">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickLiveCenterButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="uaV-Re-4kb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJ7-wD-ChF" customClass="ExButton">
+                    <rect key="frame" x="200" y="128" width="90" height="64"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="搜索房间" image="live_home_search_ico">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickSearchButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="23w-5f-p5f"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNz-nL-0H0" customClass="ExButton">
+                    <rect key="frame" x="290" y="128" width="90" height="64"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="全部分类" image="live_home_category_ico">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickCategoryButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="vTg-Xc-TT5"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gGq-KV-htg" secondAttribute="trailing" id="0Ca-9K-jW5"/>
+                <constraint firstAttribute="bottom" secondItem="5kf-ij-wlg" secondAttribute="bottom" constant="8" id="8JH-bH-AeA"/>
+                <constraint firstItem="hJ7-wD-ChF" firstAttribute="leading" secondItem="5kf-ij-wlg" secondAttribute="trailing" id="8ip-8I-Otn"/>
+                <constraint firstItem="gGq-KV-htg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cn4-Mc-dEu"/>
+                <constraint firstItem="hJ7-wD-ChF" firstAttribute="width" secondItem="xNz-nL-0H0" secondAttribute="width" id="IrJ-5a-XaR"/>
+                <constraint firstAttribute="bottom" secondItem="hJ7-wD-ChF" secondAttribute="bottom" constant="8" id="Jl1-yF-leL"/>
+                <constraint firstItem="gGq-KV-htg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Lpg-1i-vMs"/>
+                <constraint firstItem="hJ7-wD-ChF" firstAttribute="top" secondItem="gGq-KV-htg" secondAttribute="bottom" constant="8" id="NN5-gL-VPE"/>
+                <constraint firstItem="xNz-nL-0H0" firstAttribute="leading" secondItem="hJ7-wD-ChF" secondAttribute="trailing" id="QHt-N5-28A"/>
+                <constraint firstItem="cTc-Zg-NPi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="RNi-bf-NJ9"/>
+                <constraint firstItem="5kf-ij-wlg" firstAttribute="width" secondItem="hJ7-wD-ChF" secondAttribute="width" id="Wqw-iR-Bb5"/>
+                <constraint firstAttribute="bottom" secondItem="cTc-Zg-NPi" secondAttribute="bottom" constant="8" id="Xc7-xT-snZ"/>
+                <constraint firstItem="5kf-ij-wlg" firstAttribute="top" secondItem="gGq-KV-htg" secondAttribute="bottom" constant="8" id="asx-gr-u4o"/>
+                <constraint firstItem="cTc-Zg-NPi" firstAttribute="width" secondItem="5kf-ij-wlg" secondAttribute="width" id="baz-EX-w5V"/>
+                <constraint firstAttribute="bottom" secondItem="xNz-nL-0H0" secondAttribute="bottom" constant="8" id="ccf-eJ-Kpz"/>
+                <constraint firstItem="5kf-ij-wlg" firstAttribute="leading" secondItem="cTc-Zg-NPi" secondAttribute="trailing" id="e3D-NY-YRX"/>
+                <constraint firstItem="cTc-Zg-NPi" firstAttribute="top" secondItem="gGq-KV-htg" secondAttribute="bottom" constant="8" id="pyD-3A-2d9"/>
+                <constraint firstAttribute="trailing" secondItem="xNz-nL-0H0" secondAttribute="trailing" constant="20" id="vBh-48-38A"/>
+                <constraint firstItem="xNz-nL-0H0" firstAttribute="top" secondItem="gGq-KV-htg" secondAttribute="bottom" constant="8" id="xxG-R5-58h"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="categoryButton" destination="xNz-nL-0H0" id="nhk-Bu-lCj"/>
+                <outlet property="followButton" destination="cTc-Zg-NPi" id="icT-1n-Iy6"/>
+                <outlet property="imageSlider" destination="gGq-KV-htg" id="C4U-TE-Vom"/>
+                <outlet property="liveCenterButton" destination="5kf-ij-wlg" id="Ine-Us-wGt"/>
+                <outlet property="searchButton" destination="hJ7-wD-ChF" id="RUS-Tf-rcO"/>
+            </connections>
+            <point key="canvasLocation" x="328" y="205"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="live_home_category_ico" width="52" height="52"/>
+        <image name="live_home_center_ico" width="52" height="52"/>
+        <image name="live_home_follow_ico" width="52" height="52"/>
+        <image name="live_home_search_ico" width="52" height="52"/>
+    </resources>
+</document>

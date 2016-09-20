@@ -29,6 +29,6 @@
 
 @property (nonatomic, weak) SegmentView * segmentView;
 
--(void)setup:(RecommendationSegment *)model;
+-(void)setup:(RecommendSegment *)model;
 
 @end

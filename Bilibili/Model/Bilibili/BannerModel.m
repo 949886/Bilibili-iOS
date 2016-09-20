@@ -13,10 +13,8 @@
 
 +(NSDictionary *)modelCustomPropertyMapper
 {
-    return @{@"url" : @"weburl",
-             @"url" : @"link",
-             @"imageurl" : @"imageurl",
-             @"imageurl" : @"img",
+    return @{@"url" : @[@"weburl", @"link"],
+             @"imageurl" : @[@"imageurl", @"img", @"image"],
              @"_description" : @"description"};
 }
 

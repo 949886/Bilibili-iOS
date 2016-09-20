@@ -27,7 +27,7 @@
 
 @property (nonatomic, weak) ImageSlider * imageSlider;
 
-@property (nonatomic, strong) RecommendationHomeModel * data;
+@property (nonatomic, strong) RecommendHomeModel * data;
 
 @property (nonatomic, copy) NSDictionary * type2CellID;
 
@@ -64,7 +64,7 @@
     
     //加载数据(1:iPad)
     @weakify(self);
-    [BilibiliAPI getRecommendationHomepageDataWithDevice:1 success:^(RecommendationHomeModel * model)
+    [BilibiliAPI getRecommendationHomepageDataWithDevice:1 success:^(RecommendHomeModel * model)
     {
         @strongify(self);
         if (!self) return;
@@ -77,7 +77,7 @@
             [imageURLs addObject:banner.imageurl];
         self.imageSlider.urls = imageURLs;
         
-        [self.imageSlider handleEventWithBlock:^(NSInteger index) {
+        [self.imageSlider handleClickEvent:^(NSInteger index) {
             //对不同类型的banner进行不同的操作(bangumi:番剧 weblink:网页 apk:游戏广告)
             BannerModel * banner = _data.banners[index];
             

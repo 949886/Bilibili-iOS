@@ -11,6 +11,7 @@
 #import "APPConstants.h"
 #import "URLConstants.h"
 
+#import "BilibiliAppAPI.h"
 #import "BilibiliUserAPI.h"
 #import "BilibiliVideoAPI.h"
 
@@ -36,10 +37,12 @@ else {if(success) success(_result_);}
 
 + (id)forwardingTargetForSelector:(SEL)aSelector
 {
-    if ([[BilibiliVideoAPI class] respondsToSelector:aSelector])
-        return [BilibiliVideoAPI class];
+    if ([[BilibiliAppAPI class] respondsToSelector:aSelector])
+        return [BilibiliAppAPI class];
     if ([[BilibiliUserAPI class] respondsToSelector:aSelector])
         return [BilibiliUserAPI class];
+    if ([[BilibiliVideoAPI class] respondsToSelector:aSelector])
+        return [BilibiliVideoAPI class];
     return nil;
 }
 
@@ -58,7 +61,7 @@ else {if(success) success(_result_);}
                                   @"platform" : PLATFORM,
                                   @"scale" : @2,
                                   @"sign" : LIVE_SIGN,
-                                  @"ts" : LIVE_TS};
+                                  @"ts" : @1467671646};
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     [manager GET:BILIBILI_LIVE_HOME parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -72,7 +75,7 @@ else {if(success) success(_result_);}
 
 
 +(void)getRecommendationHomepageDataWithDevice:(NSInteger)option
-                     success:(void(^ _Nullable)(RecommendationHomeModel * _Nullable))success
+                     success:(void(^ _Nullable)(RecommendHomeModel * _Nullable))success
                      failure:(void(^ _Nullable)(void))failure
 {
     NSString * url = option ? BILIBILI_IPAD_RECOMMEND_HOME : BILIBILI_IPHONE_RECOMMEND_HOME;
@@ -86,13 +89,13 @@ else {if(success) success(_result_);}
                                          @"platform" : PLATFORM,
                                          @"plat" : [NSNumber numberWithInteger:option + 1],
                                          @"sign" : SIGN,
-                                         @"ts" : TS}.mutableCopy;
+                                         @"ts" : @1467671646}.mutableCopy;
     if (0 == option) parameters[@"warm"] = @1;
     
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     [manager GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        RecommendationHomeModel * result = [RecommendationHomeModel modelWithDictionary:responseObject];
+        RecommendHomeModel * result = [RecommendHomeModel modelWithDictionary:responseObject];
         if (0 == option)
         {
             IfSuccess(result);
@@ -148,7 +151,7 @@ else {if(success) success(_result_);}
                                          @"mobi_app" : @"iphone",
                                          @"platform" : PLATFORM,
                                          @"sign" : SIGN,
-                                         @"ts" : TS}.mutableCopy;
+                                         @"ts" : @1467671646}.mutableCopy;
     if (0 == option){
         parameters[@"access_key"] = ACCESS_KEY;
         parameters[@"build"] = @"3430";

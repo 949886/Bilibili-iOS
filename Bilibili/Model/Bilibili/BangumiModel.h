@@ -27,15 +27,14 @@
 @property (nonatomic, copy) NSString * share_url;
 @property (nonatomic, copy) NSString * copyright;
 
-@property (nonatomic, copy) NSString * play_count;
-@property (nonatomic, copy) NSString * danmaku_count;
-@property (nonatomic, copy) NSString * watchingCount;   //(中出了一个驼峰命名)
-@property (nonatomic, copy) NSString * favorites;
-@property (nonatomic, copy) NSString * coins;
-
-@property (nonatomic, copy) NSString * total_count;     //总集数
-@property (nonatomic, copy) NSString * newest_ep_index; //最新一集为第几集
-@property (nonatomic, copy) NSString * newest_ep_id;    //最新一集的episode_id
+@property (nonatomic, assign) NSInteger favourites;
+@property (nonatomic, assign) NSInteger coins;
+@property (nonatomic, assign) NSInteger play_count;
+@property (nonatomic, assign) NSInteger danmaku_count;
+@property (nonatomic, assign) NSInteger watching_count;
+@property (nonatomic, assign) NSInteger total_count;     //总集数
+@property (nonatomic, assign) NSInteger newest_ep_index; //最新一集为第几集
+@property (nonatomic, assign) NSInteger newest_ep_id;    //最新一集的episode_id
 
 @property (nonatomic, assign) NSInteger weekday;        //每周几播出(星期天为0)
 @property (nonatomic, assign) NSInteger arealimit;

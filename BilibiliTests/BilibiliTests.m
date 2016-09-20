@@ -13,7 +13,6 @@
 #define CACHE_PATH NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject
 #define FILE_PATH(__FILE_NAME__) [CACHE_PATH stringByAppendingString:@"/Download/"#__FILE_NAME__]
 
-@import AFNetworking;
 
 @interface BilibiliTests : XCTestCase
 

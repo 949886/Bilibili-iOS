@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSArray<LiveHomeEntranceIcon *> * entranceIcons;    //滚动条幅下各种入口的图标
 @property (nonatomic, copy) NSArray<LiveHomePartition *> * partitions;          //直播分区
 
-@property (nonatomic, strong) LiveHomeRecommendData * recommendData;
+@property (nonatomic, strong) LiveHomePartition * recommendData;
 
 
 @end
@@ -39,6 +39,8 @@
 @property (nonatomic, strong) LiveHomePartitionInfo * info; //分区信息
 @property (nonatomic, copy) NSArray<LiveModel *> * lives;   //推荐的直播
 
+@property (nonatomic, strong) NSArray<LiveModel *> * banner_data;    //推广的直播，如「bilibili音乐台」
+
 @end
 
 
@@ -51,26 +53,6 @@
 @property (nonatomic, copy) NSString * area;
 
 @property (nonatomic, strong) WebImage * sub_icon;  //图标信息
-
-@end
-
-
-@class LiveOwner;
-
-@interface LiveHomeRecommendData : NSObject
-
-@property (nonatomic, strong) NSArray<LiveModel *> *lives;
-@property (nonatomic, strong) NSArray<LiveModel *> *banner_data;
-@property (nonatomic, strong) LiveHomePartitionInfo * partition;
-
-@end
-
-
-@interface LiveOwner : NSObject
-
-@property (nonatomic, copy) NSString *face;
-@property (nonatomic, assign) NSInteger mid;
-@property (nonatomic, copy) NSString *name;
 
 @end
 

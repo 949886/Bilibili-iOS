@@ -13,7 +13,7 @@
 
 @implementation IPadHomeCell
 
--(void)setup:(RecommendationSegment *)model
+-(void)setup:(RecommendSegment *)model
 {
     //初始化segmentView
     if (!_segmentView)

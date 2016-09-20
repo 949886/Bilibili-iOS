@@ -46,10 +46,14 @@
 
 - (void)testBilibiliVideoAPI
 {
-    [BilibiliAPI getVideoURLWithAID:@"5976369" success:^(NSString * url) {
-        NSLog(@"%@", url);
+    [BilibiliVideoAPI getVideoInfoWithAID:12450 success:^(VideoModel * _Nonnull object, BilibiliResponse * _Nonnull response) {
+        
     } failure:nil];
     
+//    [BilibiliAPI getVideoURLWithAID:@"5976369" success:^(NSString * url) {
+//        NSLog(@"%@", url);
+//    } failure:nil];
+//    
     [[NSRunLoop mainRunLoop] run];
 }
 
@@ -78,10 +82,17 @@
 //    [BilibiliAppAPI getLiveHomeWithSuccess:^(LiveHomeModel * object, BilibiliResponse * response) {
 //        
 //    } failure:nil];
+//    
+//    [BilibiliAppAPI getRecommendHomeWithDevice:0 success:^(NSArray * object, BilibiliResponse * response) {
+//        
+//    } failure:nil];
     
-    [BilibiliAppAPI getRecommendHomeWithDevice:0 success:^(NSArray * object, BilibiliResponse * response) {
+    [BilibiliAppAPI getBangumiRecommendWithCursor:1472724000279 pageSize:10 success:^(NSArray * object, BilibiliResponse * response) {
         
-    } failure:nil];
+    } failure:^(BilibiliResponse * response, NSError * error) {
+        NSLog(@"%@", response);
+        NSLog(@"%@", error);
+    }];
     
     [[NSRunLoop mainRunLoop] run];
 }

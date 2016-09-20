@@ -8,30 +8,35 @@
 
 #import "HomeViewController.h"
 
+#import "LiveHomeViewController.h"
+#import "RecHomeViewController.h"
+#import "BangumiHomeViewController.h"
+
 @interface HomeViewController ()
+
+@property (nonatomic, strong) LiveHomeViewController * liveHomeViewController;
+@property (nonatomic, strong) RecHomeViewController * recHomeViewController;
+@property (nonatomic, strong) BangumiHomeViewController * bangumiHomeViewController;
 
 @end
 
 @implementation HomeViewController
 
-- (void)viewDidLoad {
+#pragma mark Override
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //Setup tabs
+    self.tabs = @[@"直播", @"推荐", @"番剧"];
+    
+    //Add Live & Recommend & Bangumi ViewController.
+    _liveHomeViewController = [LiveHomeViewController new];
+    _recHomeViewController = [RecHomeViewController new];
+    _bangumiHomeViewController = [BangumiHomeViewController new];
+    
+    self.viewControllers = @[_liveHomeViewController, _recHomeViewController, _bangumiHomeViewController];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

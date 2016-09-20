@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import "models.h"
+#import "Enumerations.h"
 #import "BilibiliResponse.h"
-
 
 @class BilibiliResult;
 
@@ -32,28 +32,45 @@
 
 #pragma mark Video
 
-+(void)getVideoURLWithAID:(NSString * _Nonnull)aid  //page default is 1
-                  success:(void(^ _Nullable)(NSString * _Nullable url))success
-                  failure:(void(^ _Nullable)(void))failure;
++(void)getVideoInfoWithAID:(NSInteger)aid
+                   success:(SuccessBlock(VideoModel))success
+                   failure:(FailureBlock)failure;
 
-+(void)getVideoURLWithAID:(NSString * _Nonnull)aid
-                     page:(NSInteger)page   /* 分p，从1开始 */
-                  success:(void(^ _Nullable)(NSString * _Nullable url))success
-                  failure:(void(^ _Nullable)(void))failure;
-
-+(void)getAVInfoWithAID:(NSString * _Nonnull)aid
++(void)getAVInfoWithAID:(NSInteger)aid
                 success:(void(^ _Nullable)(JJAVModel * _Nullable video))success
                 failure:(void(^ _Nullable)(void))failure;
 
-+(NSString * _Nonnull)getVideoURLWithAID:(int)aid page:(int)page;
++(void)getVideoURLWithAID:(NSInteger)aid
+                     page:(NSInteger)page /* 分p，从1开始 */
+                  quality:(VideoQuarityOptions)quality
+                  success:(void(^ _Nullable)(NSString * _Nullable url))success
+                  failure:(void(^ _Nullable)(void))failure;
 
 #pragma mark Home
 
 /* 应用首页数据 */
 
++(void)getLiveHomeWithSuccess:(SuccessBlock(LiveHomeModel))success
+                      failure:(FailureBlock)failure;
+
++(void)getRecommendHomeWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
+                          success:(SuccessBlock(NSArray<RecommendSegment *>))success
+                          failure:(FailureBlock)failure;
+
++(void)getBangumiHomeWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
+                        success:(SuccessBlock(BangumiHomeModel))success
+                        failure:(FailureBlock)failure;
+
++(void)getBangumiRecommendWithCursor:(u_int64_t)cursor
+                            pageSize:(NSInteger)pageSize
+                             success:(SuccessBlock(NSArray<BangumiRecommendModel *>))success
+                             failure:(FailureBlock)failure;
+
+
+
 +(void)getLiveHomepageDataWithSuccess:(void(^ _Nullable)(LiveHomeModel * _Nullable))success failure:(void(^ _Nullable)(void))failure;
 +(void)getRecommendationHomepageDataWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
-                                       success:(void(^ _Nullable)(RecommendationHomeModel * _Nullable))success
+                                       success:(void(^ _Nullable)(RecommendHomeModel * _Nullable))success
                                        failure:(void(^ _Nullable)(void))failure;
 +(void)getBangumiHomepageDataWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
                                 success:(void(^ _Nullable)(BangumiHomeModel * _Nullable))success

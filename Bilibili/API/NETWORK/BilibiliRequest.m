@@ -6,6 +6,8 @@
 //  Copyright © 2016年 LunarEclipse. All rights reserved.
 //
 
+#import <objc/message.h>
+
 #import "BilibiliRequest.h"
 
 //Execute callback block
@@ -49,7 +51,8 @@ else {if(success) success(_result_);}
         if (data == nil) data = responseObject;
         
         if ([data isKindOfClass:[NSDictionary class]]) {
-            id result = objc_msgSend(clazz, @selector(modelWithDictionary:), data);
+            id (* msgSend)(id, SEL, NSDictionary *) = (id (*)(id, SEL, NSDictionary *))objc_msgSend;
+            id result = msgSend(clazz, @selector(modelWithDictionary:), data);
             if(success) success(result, response);
         }
         else if ([data isKindOfClass:[NSArray class]]) {

@@ -17,11 +17,16 @@
                       failure:(FailureBlock)failure;
 
 +(void)getRecommendHomeWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
-                          success:(SuccessBlock(NSArray<RecommendationSegment *>))success
+                          success:(SuccessBlock(NSArray<RecommendSegment *>))success
                           failure:(FailureBlock)failure;
 
 +(void)getBangumiHomeWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
                         success:(SuccessBlock(BangumiHomeModel))success
                         failure:(FailureBlock)failure;
+
++(void)getBangumiRecommendWithCursor:(u_int64_t)cursor
+                            pageSize:(NSInteger)pageSize
+                             success:(SuccessBlock(NSArray<BangumiRecommendModel *>))success
+                             failure:(FailureBlock)failure;
 
 @end

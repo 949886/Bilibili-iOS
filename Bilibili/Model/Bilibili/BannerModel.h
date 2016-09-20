@@ -15,8 +15,8 @@
 @interface BannerModel : NSObject
 
 @property (nonatomic, copy) NSString * title;
-@property (nonatomic, copy) NSString * url;
-@property (nonatomic, copy) NSString * imageurl;
+@property (nonatomic, copy) NSString * url;     //跳转
+@property (nonatomic, copy) NSString * imageurl;    //封面
 @property (nonatomic, copy) NSString * imagekey;
 
 @property (nonatomic, copy) NSString * style;

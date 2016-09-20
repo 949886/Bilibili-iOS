@@ -20,7 +20,7 @@
 
 +(NSDictionary *)modelContainerPropertyGenericClass
 {
-    return @{@"banner" : [BannerModel class],
+    return @{@"banners" : [BannerModel class],
              @"entranceIcons" : [LiveHomeEntranceIcon class],
              @"partitions" : [LiveHomePartition class]};
 }
@@ -47,7 +47,8 @@
 
 +(NSDictionary *)modelContainerPropertyGenericClass
 {
-    return @{@"lives" : [LiveModel class]};
+    return @{@"lives" : [LiveModel class],
+             @"banner_data" : [LiveModel class]};
 }
 
 @end
@@ -59,20 +60,5 @@
 {
     return @{@"ID" : @"id"};
 }
-
-@end
-
-
-@implementation LiveHomeRecommendData
-
-+ (NSDictionary *)modelContainerPropertyGenericClass
-{
-    return @{@"lives" : [LiveModel class],
-             @"banner_data" : [LiveModel class]};
-}
-
-@end
-
-@implementation LiveOwner
 
 @end

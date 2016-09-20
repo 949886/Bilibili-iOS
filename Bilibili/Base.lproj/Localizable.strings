@@ -5,3 +5,22 @@
   Created by LunarEclipse on 16/7/11.
   Copyright © 2016年 LunarEclipse. All rights reserved.
 */
+
+"home_live_moreInfo" = "当前%ld个直播，进去看看";
+
+"home_recommend_moreInfo" = "更多%@";
+
+"home_bangumi_segment1_title" = "新番连载";
+"home_bangumi_segment1_moreinfo" = "更多连载";
+"home_bangumi_segment2_title" = "%d月新番";
+"home_bangumi_segment2_moreinfo" = "分季列表";
+"home_bangumi_segment3_title" = "番剧推荐";
+"home_bangumi_segment3_moreinfo" = " ";
+"home_bangumi_viewers" = "%@人在看";
+"home_bangumi_followers" = "%@人追番";
+"home_bangumi_currentEpisode" = "更新至第%d话";
+"home_bangumi_recommend_title" = "番剧推荐";
+
+"video_relative_upper" = "Up主:  %@";
+"video_relative_playCount" = "播放:  %ld";
+"video_relative_danmakuCount" = "弹幕:  %ld";

@@ -15,8 +15,7 @@
 {
     return @{@"pages" : [PageModel class],
              @"relates" : [VideoModel class],
-             @"tags" : [NSString class],
-             @"rights" : [NSNumber class]};
+             @"tags" : [NSString class] };
 }
 
 @end

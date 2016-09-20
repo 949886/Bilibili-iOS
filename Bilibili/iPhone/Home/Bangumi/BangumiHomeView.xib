@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BangumiHomeViewController">
+            <connections>
+                <outlet property="tableView" destination="wuR-ie-ARa" id="a8g-PE-u9E"/>
+                <outlet property="view" destination="MFQ-8C-Dpx" id="WDc-a6-t0Z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="MFQ-8C-Dpx">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wuR-ie-ARa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="wuR-ie-ARa" firstAttribute="top" secondItem="MFQ-8C-Dpx" secondAttribute="top" id="1VO-sA-w5l"/>
+                <constraint firstItem="wuR-ie-ARa" firstAttribute="leading" secondItem="MFQ-8C-Dpx" secondAttribute="leading" id="6Wi-W7-tDU"/>
+                <constraint firstAttribute="trailing" secondItem="wuR-ie-ARa" secondAttribute="trailing" id="bfL-sm-aP5"/>
+                <constraint firstAttribute="bottom" secondItem="wuR-ie-ARa" secondAttribute="bottom" id="tb6-3f-2tI"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="328.5" y="391.5"/>
+        </view>
+    </objects>
+</document>

@@ -10,4 +10,9 @@
 
 @implementation BilibiliResponse
 
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"Code: %ld Message: %@", _code, _message];
+}
+
 @end

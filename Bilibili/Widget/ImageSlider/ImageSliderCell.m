@@ -28,25 +28,6 @@
     return self;
 }
 
-//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-//{
-//    [super touchesBegan:touches withEvent:event];
-//    NSLog(@"%@", @"test");
-//    
-////    for (int i = 0; i < 3; ++i)
-////    {
-////        if(i > _cells.count)break;
-////        ImageSliderCell * cell = _cells[i];
-////        
-////        if (CGRectContainsPoint(cell.frame, [[touches anyObject] locationInView:cell]))
-////        {
-////            NSLog(@"%@", @"IN");
-////        }
-////    }
-//}
-
-
-
 -(void)setImage:(UIImage *)image
 {
     _image = image;

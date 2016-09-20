@@ -9,11 +9,48 @@
 #import "BilibiliVideoAPI.h"
 
 #import "URLConstants.h"
+#import "Auth.h"
 
 @import YYKit;
 @import AFNetworking;
 
 @implementation BilibiliVideoAPI
+
+//[API]http://app.bilibili.com/x/v2/view?aid=6024746&appkey=c1b107428d337928&build=3600&device=phone&mobi_app=iphone&platform=ios&ts=1472409128&sign=fe95c6be47d5ccddfd8d0cfcdbd05779
++(void)getVideoInfoWithAID:(NSInteger)aid
+                   success:(SuccessBlock(VideoModel))success
+                   failure:(FailureBlock)failure;
+{
+    NSMutableDictionary * parameters = @{@"aid" : @(aid),
+                                         @"appkey" : APP_KEY,
+                                         @"build" : @(3600),
+                                         @"device" : @"phone",
+                                         @"mobi_app" : @"iphone",
+                                         @"platform" : PLATFORM}.mutableCopy;
+    parameters[@"sign"] = [Auth generateSign:parameters];
+    
+    [BilibiliRequest GET:BILIBILI_VIDEO_INFO parameters:parameters clazz:[VideoModel class] progress:nil success:success failure:failure];
+}
+
++(void)getAVInfoWithAID:(NSInteger)aid
+                success:(void(^ _Nullable)(JJAVModel * _Nullable video))success
+                failure:(void(^ _Nullable)(void))failure
+{
+    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
+    
+    NSString * url = [NSString stringWithFormat:@"%@%ld", BILIBILIJJ_AV2CID, (long)aid];
+    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * task, id responseObject) {
+        JJAVModel * videoModel = [JJAVModel modelWithDictionary:responseObject];
+        if (videoModel.code == 0 && success)
+            success(videoModel);
+        else if(failure) failure();
+    } failure:^(NSURLSessionDataTask * task, NSError * error) {
+#ifdef DEBUG
+        if (error) NSLog(@"%@", error);
+#endif
+    }];
+}
 
 +(void)getVideoURLWithAID:(NSInteger)aid
                      page:(NSInteger)page
@@ -71,26 +108,6 @@
         }];
         
     } failure:failure];
-}
-
-+(void)getAVInfoWithAID:(NSInteger)aid
-                success:(void(^ _Nullable)(JJAVModel * _Nullable video))success
-                failure:(void(^ _Nullable)(void))failure
-{
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
-    
-    NSString * url = [NSString stringWithFormat:@"%@%ld", BILIBILIJJ_AV2CID, (long)aid];
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * task, id responseObject) {
-        JJAVModel * videoModel = [JJAVModel modelWithDictionary:responseObject];
-        if (videoModel.code == 0 && success)
-            success(videoModel);
-        else if(failure) failure();
-    } failure:^(NSURLSessionDataTask * task, NSError * error) {
-#ifdef DEBUG
-        if (error) NSLog(@"%@", error);
-#endif
-    }];
 }
 
 @end

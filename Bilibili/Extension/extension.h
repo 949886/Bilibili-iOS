@@ -12,6 +12,7 @@
 #import "macro.h"
 
 #import "NSStringExtension.h"
+#import "NSString+Chinese.h"
 
 #import "UIImageExtension.h"
 #import "UIScreenExtension.h"

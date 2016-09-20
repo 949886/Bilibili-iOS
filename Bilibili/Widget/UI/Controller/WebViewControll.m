@@ -29,6 +29,11 @@
     return self;
 }
 
++ (WebViewControll *)controllerWithURL:(NSString *)url
+{
+    return [[self alloc] initWithURL:url];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

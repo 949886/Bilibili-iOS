@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSPatch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,7 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-Bilibili.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,12 +67,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
+		<key>2103A91513FB5EE77DEDED9B1104A4E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>281755940BD7E8E5F7CEC683C0247397</key>
+		<key>21BEAF01F51EC300AF7719ADEE3F2FE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68D256824F45FBAC563C00613C36B0DD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>804DE44571F294D9EF5D8EF525B320F4</key>
+		<key>881D96B6F3E599759AEBE1521CA0251D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,17 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD3403345AA81AA26DD417A73D859D46</key>
+		<key>BCA56C568ECA822D64D9D703B8DA8463</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E363B9E919A7B8FFC34322D20C9CC726</key>
+		<key>DEB2130447C87E5C8C45819DD0F3190B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E448427385F852A4612292BC7A001D6B</key>
+		<key>EA0DD8ED489933744D70DD4A9719ED01</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB9EEE86F71BB7419AC95CEE3D10CC43</key>
 		<dict>
 			<key>primary</key>
 			<true/>

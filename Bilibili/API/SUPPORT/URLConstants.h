@@ -16,7 +16,7 @@
 #define BILIBILI_VIDEO_INFO @"http://app.bilibili.com/x/view"
 #define BILIBILI_VIDEO_COMMENTS @"http://api.bilibili.com/feedback"
 #define BILIBILI_VIDEO_BP @"http://www.bilibili.com/widget/ajaxGetBP"       //B币
-#define BILIBILI_VIDEO_PLAYURL @"http://interface.bilibili.com/playurl"     //暂不可用
+#define BILIBILI_VIDEO_PLAYURL @"http://interface.bilibili.com/playurl"     //视频接口（算法未知）
 #define BILIBILI_VIDEO_PLAYURL_M @"http://www.bilibili.com/m/html5"        //低清开放接口
 
 #define BILIBILI_BANGUMI_INFO @"http://bangumi.bilibili.com/api/season_v3"
@@ -39,7 +39,7 @@
 #define BILIBILI_LIVE_HOME @"http://live.bilibili.com/AppIndex/home"
 
 #define BILIBILI_IPHONE_RECOMMEND_HOME @"http://app.bilibili.com/x/v2/show"
-#define BILIBILI_IPHONE_BANGUMI_HOME @"http://bangumi.bilibili.com/api/app_index_page_v3"
+#define BILIBILI_IPHONE_BANGUMI_HOME @"http://bangumi.bilibili.com/api/app_index_page_v4"
 #define BILIBILI_IPHONE_BANGUMI_RECOMMEND @"http://bangumi.bilibili.com/api/bangumi_recommend"
 
 #define BILIBILI_IPAD_RECOMMEND_HOME @"https://app.bilibili.com/x/show"
@@ -71,6 +71,8 @@
 
 //BILIBILI_BANGUMI 新番连载 http://bangumi.bilibili.com/api/get_season_by_tag_v2?access_key=60b056cf4525dda82fd0880d103bce85&actionKey=appkey&appkey=27eb53fc9058f8c3&build=3380&device=pad&indexType=0&mobi_app=iphone&page=1&pagesize=6&platform=ios&sign=866a409ead790ea4f763afe5b65fd6de&tag_id=84&ts=1467466355
 //BILIBILI_BANGUMI 完结动画 http://bangumi.bilibili.com/api/get_season_by_tag_v2?access_key=60b056cf4525dda82fd0880d103bce85&actionKey=appkey&appkey=27eb53fc9058f8c3&build=3380&device=pad&indexType=0&mobi_app=iphone&page=1&pagesize=6&platform=ios&sign=d96814ff75104372f0b21eaf9173f6d0&tag_id=85&ts=1467466355
+
+//BILIBILI_DANMAKU http://comment.bilibili.com/8477109.xml
 
 //BILIBILI_USER_HISTORY 用户观看历史 http://api.bilibili.com/x/v2/history?access_key=0fbfd318ecae0ef6d4f75847284dd7b6&actionKey=appkey&appkey=27eb53fc9058f8c3&build=3430&device=pad&mobi_app=iphone&platform=ios&pn=1&ps=30&sign=28edb235650cd8479f25528ead12d196&ts=1467474771
 

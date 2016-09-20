@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gl-ZR-QJt">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_region_border" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-Gv-bqm">
+                        <rect key="frame" x="15" y="0.0" width="130" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="W9D-Gv-bqm" secondAttribute="height" multiplier="1:1" id="LOW-fG-TE7"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_region_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="oe5-Xq-Mac">
+                        <rect key="frame" x="48" y="29.5" width="65" height="65"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhL-wo-pdV">
+                        <rect key="frame" x="64" y="130" width="33" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="W9D-Gv-bqm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="0Sl-HD-Fpe"/>
+                <constraint firstItem="3Gl-ZR-QJt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5B4-kU-a5q"/>
+                <constraint firstItem="oe5-Xq-Mac" firstAttribute="width" secondItem="W9D-Gv-bqm" secondAttribute="width" multiplier="0.5" id="Aff-lb-d4L"/>
+                <constraint firstItem="lhL-wo-pdV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="EbD-0V-Fkh"/>
+                <constraint firstItem="W9D-Gv-bqm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ITL-50-JlW"/>
+                <constraint firstAttribute="trailing" secondItem="3Gl-ZR-QJt" secondAttribute="trailing" id="Kqy-d4-Fhh"/>
+                <constraint firstItem="oe5-Xq-Mac" firstAttribute="centerY" secondItem="W9D-Gv-bqm" secondAttribute="centerY" constant="-3" id="LGD-Pn-7bc"/>
+                <constraint firstAttribute="bottom" secondItem="lhL-wo-pdV" secondAttribute="bottom" constant="12" id="Lhh-nU-TfH"/>
+                <constraint firstItem="oe5-Xq-Mac" firstAttribute="centerX" secondItem="W9D-Gv-bqm" secondAttribute="centerX" id="TyS-N1-fdp"/>
+                <constraint firstItem="3Gl-ZR-QJt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VDV-pE-k8H"/>
+                <constraint firstAttribute="bottom" secondItem="3Gl-ZR-QJt" secondAttribute="bottom" id="d0Z-kd-mgh"/>
+                <constraint firstItem="oe5-Xq-Mac" firstAttribute="height" secondItem="W9D-Gv-bqm" secondAttribute="height" multiplier="0.5" id="icI-hB-x7F"/>
+                <constraint firstAttribute="trailing" secondItem="W9D-Gv-bqm" secondAttribute="trailing" constant="15" id="rN1-92-d2Z"/>
+                <constraint firstItem="lhL-wo-pdV" firstAttribute="top" secondItem="W9D-Gv-bqm" secondAttribute="bottom" id="wde-1P-30h"/>
+            </constraints>
+            <size key="customSize" width="160" height="160"/>
+            <connections>
+                <outlet property="button" destination="3Gl-ZR-QJt" id="mhz-NK-qxN"/>
+                <outlet property="iconImageView" destination="oe5-Xq-Mac" id="BOb-he-90z"/>
+                <outlet property="nameLabel" destination="lhL-wo-pdV" id="qAH-L9-d3a"/>
+            </connections>
+            <point key="canvasLocation" x="372" y="431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_region_border" width="72" height="76"/>
+        <image name="home_region_icon_1" width="60" height="60"/>
+    </resources>
+</document>

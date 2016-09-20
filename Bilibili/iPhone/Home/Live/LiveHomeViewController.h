@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface LiveHomeViewController : UIViewController
+@interface LiveHomeViewController : BaseViewController
 
 @end

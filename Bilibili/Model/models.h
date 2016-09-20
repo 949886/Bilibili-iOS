@@ -25,8 +25,9 @@
 #import "MPlayURLModel.h"
 
 #import "LiveHomeModel.h"
-#import "RecommendationHomeModel.h"
+#import "RecommendHomeModel.h"
 #import "BangumiHomeModel.h"
+#import "BangumiRecommendModel.h"
 
 #import "JJAVModel.h"
 

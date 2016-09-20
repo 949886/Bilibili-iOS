@@ -17,10 +17,11 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - GPUImage (0.1.7)
   - JSPatch (1.1):
     - JSPatch/Core (= 1.1)
   - JSPatch/Core (1.1)
-  - MJRefresh (3.1.9)
+  - MJRefresh (3.1.12)
   - ReactiveCocoa (4.0.0):
     - ReactiveCocoa/UI (= 4.0.0)
     - Result (~> 1.0.1)
@@ -42,20 +43,22 @@ PODS:
   - YYKit/no-arc (1.0.7)
 
 DEPENDENCIES:
-  - AFNetworking
-  - FMDB
-  - JSPatch
-  - MJRefresh
+  - AFNetworking (~> 3.1)
+  - FMDB (~> 2.6)
+  - GPUImage
+  - JSPatch (~> 1.1)
+  - MJRefresh (~> 3.1)
   - ReactiveCocoa (= 4.0.0)
-  - SDWebImage
-  - WYPopoverController
-  - YYKit
+  - SDWebImage (~> 3.8)
+  - WYPopoverController (= 0.3.9)
+  - YYKit (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
-  MJRefresh: c5f1f1653e5a1b932c90f78074f2bc86f3f9bd5e
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReactiveCocoa: 69be555be30674b07a86b60a91b855063841acc0
   Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91

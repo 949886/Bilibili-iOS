@@ -11,6 +11,12 @@
 
 @implementation BangumiModel
 
++(NSDictionary *)modelCustomPropertyMapper
+{
+    return @{@"favourites" : @[@"favourites", @"favorites"],
+             @"watching_count" : @[@"watching_count", @"watchingCount"]};
+}
+
 + (NSDictionary *)modelContainerPropertyGenericClass
 {
     return @{@"episodes" : [EpisodeModel class],

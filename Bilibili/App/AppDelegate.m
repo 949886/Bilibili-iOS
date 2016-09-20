@@ -21,12 +21,12 @@
 #import "YYFPSLabel.h"
 
 @import YYKit;
+@import JSPatch;
 @import SDWebImage;
-@import AFNetworking;
 
 void handleException(NSException * exception);
 
-@interface AppDelegate () <NSURLSessionDataDelegate>
+@interface AppDelegate ()
 
 @end
 
@@ -42,14 +42,25 @@ void handleException(NSException * exception);
     _window.backgroundColor = [UIColor whiteColor];
     [_window makeKeyAndVisible];
     
-    
     //Setup Network Mornitor
     [[NetworkManager instance] activate];   //开始监控网络
-    [LaunchAD show];                        //显示广告，无则显示2233的bilibili干杯动画
     
+    //显示广告，无则显示2233的bilibili干杯动画
+    [LaunchAD show];
+    
+    //Setup JSPatch Engine
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [JPEngine startEngine];
+        NSArray * array = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"JS" ofType:@"plist"]];
+        for (NSString * js in array)
+        {
+            NSString *sourcePath = [[NSBundle mainBundle] pathForResource:js ofType:nil];
+            NSString *script = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
+            [JPEngine evaluateScript:script];
+        }
+    });
     
     //Setup FPS Monitor
-    
 #ifdef DEBUG
     YYFPSLabel *fps = [YYFPSLabel new];
     fps.left = 25;
@@ -59,28 +70,8 @@ void handleException(NSException * exception);
     
     //Setup Exception Handler
     NSSetUncaughtExceptionHandler(handleException);
-    
-//    [BilibiliVideoAPI getVideoURLWithAID:5976369 page:1 quality:VideoQuarityLow success:^(NSString * url) {
-//        [[Downloader downloader] download:url progress:nil success:nil failure:nil];
-//    } failure:^{
-//        
-//    }];
 
     return YES;
-}
-
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest * __nullable))completionHandler
-{
-    NSString * redirectedURL = response.allHeaderFields[@"Location"];
-    NSLog(@"%@", redirectedURL);
-    completionHandler(task.currentRequest);
-}
-
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSHTTPURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler;
-{
-    //传入NSURLSessionResponceAllow:允许连接 NSURLSessionResponceCancel:拒绝
-    NSLog(@"%@", @"aaaaaaaaaaaaaaaaa");
-    completionHandler(NSURLSessionResponseAllow);
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(nullable NSError *)error

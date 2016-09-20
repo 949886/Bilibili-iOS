@@ -7,31 +7,126 @@
 //
 
 #import "RecHomeViewController.h"
+#import "WebViewControll.h"
+
+#import "ImageSlider.h"
+#import "DenpakuView.h"
+#import "SegmentCell.h"
+
+#import "BilibiliAPI.h"
+
+@import YYKit;
+@import MJRefresh;
+@import SDWebImage;
 
 @interface RecHomeViewController ()
+
+@property (nonatomic, weak) ImageSlider * imageSlider;
+
+@property (nonatomic, strong) NSArray<RecommendSegment *> * data;
+@property (nonatomic, copy) NSMutableArray * segmentsData;
 
 @end
 
 @implementation RecHomeViewController
 
-- (void)viewDidLoad {
+#pragma mark Override
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _segmentsData = [NSMutableArray new];
+    
+    //初始化图片轮播器
+    ImageSlider * imageSlider = [[ImageSlider alloc]initWithFrame:CGRectMake(0, 0, self.tableView.width, 120)];
+    imageSlider.imageSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, imageSlider.height);
+    //imageSlider.images = @[@"2.jpg", @"3.jpg"];
+    self.imageSlider = imageSlider;
+    self.tableView.tableHeaderView = imageSlider;
+    
+    [self.imageSlider handleClickEvent:^(NSInteger index) {
+        //对不同类型的banner进行不同的操作(bangumi:番剧 weblink:网页 apk:游戏广告)
+//        if(_data.banners.count <= index) return;
+//        BannerModel * banner = _data.banners[index];
+//        
+//        //weblink
+//        if ([banner.url isNotBlank])
+//        {
+//            WebViewControll * controller = [[WebViewControll alloc] initWithURL:banner.url];
+//            UINavigationController * navigationController = self.view.superview.viewController.navigationController;
+//            [navigationController pushViewController:controller animated:YES];
+//        }
+//        
+        //TODO: 跳转到Video和bangumi
+    }];
+
+    
+    //加载数据
+    [self loadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark Delegate
+
+/* TableView DataSource */
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _segmentsData.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SegmentCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    RecommendSegment * segment = _segmentsData[indexPath.row];
+    
+    //设置数据
+    cell.titleLabel.text = segment.title;
+    NSString * str = (segment.title.length >= 2) ? [segment.title substringWithRange:NSMakeRange(0, 2)] : @"";
+    cell.moreInfoLabel.text = [NSString stringWithFormat:NSLocalizedString(@"home_recommend_moreInfo", nil), str];
+//    [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:segment.info.sub_icon.src]];
+    [cell setupRecommend:_segmentsData[indexPath.row]];
+    
+    return cell;
 }
-*/
+
+/* ScrollViewDelegate */
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (self.tableView.contentOffset.y < 0 && self.tableView.contentOffset.y >= -50)
+        [self.tableView setContentOffset:CGPointZero animated:YES];
+}
+
+#pragma mark Encapsulation
+
+- (void)loadData
+{
+    @weakify(self);
+    [BilibiliAPI getRecommendHomeWithDevice:0 success:^(NSArray<RecommendSegment *> * object, BilibiliResponse * response) {
+        @strongify(self)
+        if (!self) return;
+        
+        _data = object;
+        _segmentsData = object.mutableCopy;
+
+        //设置图片轮播器图片
+        NSMutableArray * imageURLs = [NSMutableArray array];
+        for (BannerModel * banner in _data.firstObject.banners)
+            [imageURLs addObject:banner.imageurl];
+        _imageSlider.urls = imageURLs;
+
+        [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+    } failure:^(BilibiliResponse * response, NSError *  error) {
+        [self.tableView.mj_header endRefreshing];
+#ifdef DEBUG
+        NSLog(@"%@", response);
+        NSLog(@"%@", error);
+#endif
+    }];
+}
 
 @end
