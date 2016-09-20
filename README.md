@@ -1,8 +1,6 @@
 Progress: 25%
 Lines: 10051
 
----
-
 [![Support](https://img.shields.io/badge/support-iOS%208%2b-green.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 [![XCode](https://img.shields.io/badge/Xcode-v7.2.0-6699FF.svg?style=flat)](https://developer.apple.com/xcode/)&nbsp;
 [![CocoaPods](https://img.shields.io/badge/pod-v0.39.0-orange.svg?style=flat)](https://cocoapods.org/)&nbsp;
