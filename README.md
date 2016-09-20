@@ -22,5 +22,5 @@ Framework
 UI
  - [WYPopoverController](https://github.com/nicolaschengdev/WYPopoverController) popover弹出控件
 
- Others
+Others
  - [ijkplayer](https://github.com/Bilibili/ijkplayer) 基于FFmpeg的iOS/Android视频播放器
