@@ -24,3 +24,6 @@ xcuserdata
 
 # CocoaPods
 Pods/
+
+# Framework
+IJKMediaFramework.framework
