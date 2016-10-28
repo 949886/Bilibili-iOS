@@ -18,7 +18,8 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    return [DeviceManager instance].supportedOrientations;
+    if ([DeviceManager instance].orientation != 0)  return [DeviceManager instance].orientation;
+    return [DeviceManager instance].defaultOrientation;
 }
 
 @end

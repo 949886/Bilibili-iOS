@@ -11,7 +11,9 @@
 @interface DeviceManager : NSObject
 
 @property (nonatomic, weak, readonly) UIViewController * rootViewController;
-@property (nonatomic, assign, readonly) UIInterfaceOrientationMask supportedOrientations;
+
+@property (nonatomic, assign) UIInterfaceOrientationMask orientation;
+@property (nonatomic, assign, readonly) UIInterfaceOrientationMask defaultOrientation;
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -49,10 +49,19 @@
 {
     [super viewDidLoad];
     
+    __weak typeof(self) weakSelf = self;
+    
     _segmentsData = [NSArray new];
     _recommendData = [NSMutableArray new];
     
+    [self.tableView registerNib: [UINib nibWithNibName:@"SegmentCell" bundle:nil] forCellReuseIdentifier:CELL_ID];
     [self.tableView registerNib:[UINib nibWithNibName:@"BangumiRecommendCell" bundle:nil] forCellReuseIdentifier:REC_CELL_ID];
+    
+    MJRefreshAutoNormalFooter * footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf loadLatestRecommendData];
+    }];
+    footer.refreshingTitleHidden = YES;
+    self.tableView.mj_footer = footer;
     
     //初始化Header
     BangumiHomeHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"BangumiHomeHeader" owner:nil options:nil] firstObject];
@@ -65,9 +74,12 @@
 //    imageSlider.images = @[@"2.jpg", @"3.jpg"];
     self.imageSlider = imageSlider;
     
+    @weakify(self);
     [self.imageSlider handleClickEvent:^(NSInteger index) {
-        if(_data.banners.count <= index) return;
-        BannerModel * banner = _data.banners[index];
+        @strongify(self);
+        
+        if(self.data.banners.count <= index) return;
+        BannerModel * banner = self.data.banners[index];
         
         //weblink
         if ([banner.url isNotBlank])
@@ -81,17 +93,6 @@
     }];
     
     
-    //上拉刷新
-    __weak typeof(self) weakSelf = self;
-    MJRefreshAutoNormalFooter * footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf loadLatestRecommendData];
-    }];
-//    [footer setTitle:@"" forState:MJRefreshStatePulling];
-//    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
-//    [footer setTitle:@"" forState:MJRefreshStateWillRefresh];
-    footer.refreshingTitleHidden = YES;
-    
-    self.tableView.mj_footer = footer;
     //加载数据
     [self loadData];
     [self loadLatestRecommendData];

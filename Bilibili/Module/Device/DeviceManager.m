@@ -45,9 +45,8 @@
     return viewController;
 }
 
--(UIInterfaceOrientationMask)supportedOrientations
+-(UIInterfaceOrientationMask)defaultOrientation
 {
-    
     NSString * deviceName = [UIDevice currentDevice].model;
     if ([deviceName isEqualToString:@"iPad"])
     {
@@ -56,6 +55,7 @@
         return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
     }
     else return UIInterfaceOrientationMaskPortrait;
+//    else return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 @end

@@ -11,11 +11,15 @@
 #import "GradientImageView.h"
 #import "ExLabel.h"
 
+@class BangumiModel;
+
 @interface BangumiCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet GradientImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UILabel *viewersLabel;
 @property (weak, nonatomic) IBOutlet ExLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *episodeLabel;
+
+-(void)setup:(BangumiModel *)bangumi;
 
 @end

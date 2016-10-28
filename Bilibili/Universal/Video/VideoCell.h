@@ -11,8 +11,6 @@
 
 @interface VideoCell : UICollectionViewCell
 
-@property (nonatomic, weak) UINavigationController * navigationController;
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet ExLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *playCountIcon;
@@ -23,6 +21,6 @@
 -(void)hideCountData;
 -(void)showCountData;
 
--(void)setup:(RecommendElement *)element;
+-(void)setup:(RecommendElement *)element type:(NSString *)type;
 
 @end

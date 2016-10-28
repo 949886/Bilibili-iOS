@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AccountModel.h"
+
 @interface AccountManager : NSObject
+
+@property (nonatomic, readonly) NSArray<AccountModel *> * accounts;
+@property (nonatomic, readonly) AccountModel * currentAccount;
+@property (nonatomic, readonly) BOOL isLogin;
+
++ (instancetype)manager;
+
+- (void)addAccount:(AccountModel *)account;
+- (void)deleteAccount:(AccountModel *)account;
 
 @end

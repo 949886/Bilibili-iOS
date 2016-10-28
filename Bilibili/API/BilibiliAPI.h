@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "models.h"
-#import "Enumerations.h"
+#import "BilibiliEnumeration.h"
 #import "BilibiliResponse.h"
 
 @class BilibiliResult;
@@ -22,13 +22,18 @@
 
 #pragma mark User
 
-+(void)getUserWithID:(NSString * _Nonnull)uid
++(void)getUserWithID:(NSInteger)uid
              success:(SuccessBlock(UserModel))success
              failure:(FailureBlock)failure;
 
-+(void)getUserWithName:(NSString * _Nonnull)name
-               success:(SuccessBlock(UserModel))success
-               failure:(FailureBlock)failure;
+//+(void)getUserWithName:(NSString * _Nonnull)name
+//               success:(SuccessBlock(UserModel))success
+//               failure:(FailureBlock)failure;
+
++(void)loginWithUsername:(NSString * _Nonnull)username
+                password:(NSString * _Nonnull)password
+                 success:(SuccessBlock(LoginResponse))success
+                 failure:(FailureBlock)failure;
 
 #pragma mark Video
 
@@ -36,22 +41,46 @@
                    success:(SuccessBlock(VideoModel))success
                    failure:(FailureBlock)failure;
 
-+(void)getAVInfoWithAID:(NSInteger)aid
-                success:(void(^ _Nullable)(JJAVModel * _Nullable video))success
-                failure:(void(^ _Nullable)(void))failure;
+/**
+ *  获取视频播放url的接口
+ *
+ *  @param cid     视频cid
+ *  @param vid     若需不限速必须传入此参数以及type，若视频为一般视频传av号，若为番剧传番剧号sid
+ *  @param type    BilibiliVideoTypeNormal: 一般视频 BilibiliVideoTypeBangumi:番剧
+ *  @param quality 清晰度
+ */
++(void)getPlayURLWithCid:(NSInteger)cid
+                     vid:(NSInteger)vid
+               videoType:(BilibiliVideoType)type
+                 quality:(VideoQuarityOptions)quality
+                 success:(SuccessBlock(PlayURLModel))success
+                 failure:(FailureBlock)failure;
 
-+(void)getVideoURLWithAID:(NSInteger)aid
-                     page:(NSInteger)page /* 分p，从1开始 */
-                  quality:(VideoQuarityOptions)quality
-                  success:(void(^ _Nullable)(NSString * _Nullable url))success
-                  failure:(void(^ _Nullable)(void))failure;
++(void)getDanmakuWithCid:(NSInteger)cid
+                 success:(void(^ _Nullable)(NSString * _Nullable xml))success
+                 failure:(void(^ _Nullable)(void))failure;
+
++(void)getCommentsWithAid:(NSInteger)aid
+                     page:(NSInteger)page
+                 pageSize:(NSInteger)pageSize
+                  success:(SuccessBlock(CommentsModel))success
+                  failure:(FailureBlock)failure;
+
 
 #pragma mark Home
 
-/* 应用首页数据 */
+/* 应用数据 */
 
 +(void)getLiveHomeWithSuccess:(SuccessBlock(LiveHomeModel))success
                       failure:(FailureBlock)failure;
+
++(void)getLiveRoomIndexWithRoomID:(NSInteger)roomID
+                          success:(SuccessBlock(LiveRoomModel))success
+                          failure:(FailureBlock)failure;
+
++(void)getLiveRoomMessagesWithRoomID:(NSInteger)roomID
+                             success:(SuccessBlock(LiveMessagesModel))success
+                             failure:(FailureBlock)failure;
 
 +(void)getRecommendHomeWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
                           success:(SuccessBlock(NSArray<RecommendSegment *>))success
@@ -66,7 +95,53 @@
                              success:(SuccessBlock(NSArray<BangumiRecommendModel *>))success
                              failure:(FailureBlock)failure;
 
++(void)getBangumiInfoWithSid:(NSInteger)seasonID
+                     success:(SuccessBlock(BangumiModel))success
+                     failure:(FailureBlock)failure;
 
++(void)getRelativeBangumisWithSid:(NSInteger)seasonID
+                          success:(SuccessBlock(RelativeBangumisModel))success
+                          failure:(FailureBlock)failure;
+
+#pragma mark - POST
+
+/* 以下POST方法需要登录，需要登录，需要登录 (重要的事情说三遍) */
+
++(void)commentVideo:(NSInteger)aid
+            content:(NSString * _Nonnull)text
+            success:(SuccessBlock)success
+            failure:(FailureBlock)failure;
+
++(void)sendDanmaku:(NSString * _Nonnull)text
+          videoCid:(NSInteger)cid
+              time:(NSTimeInterval)time
+              type:(NSUInteger)type
+          fontSize:(NSUInteger)fontSize
+          hexColor:(NSUInteger)hexColor
+           success:(SuccessBlock)success
+           failure:(FailureBlock)failure;
+
++(void)addFavoriteVideo:(NSInteger)aid
+                success:(SuccessBlock)success
+                failure:(FailureBlock)failure;
+
++(void)deleteFavoriteVideo:(NSInteger)aid
+                   success:(SuccessBlock)success
+                   failure:(FailureBlock)failure;
+
+
+#pragma mark - BILIBILIJJ
+
++(void)getAVInfoWithAID:(NSInteger)aid
+                success:(void(^ _Nullable)(JJAVModel * _Nullable video))success
+                failure:(void(^ _Nullable)(void))failure;
+
++(void)getVideoURLWithAID:(NSInteger)aid
+                     page:(NSInteger)page /* 分p，从1开始 */
+                  success:(void(^ _Nullable)(NSString * _Nullable url))success
+                  failure:(void(^ _Nullable)(void))failure;
+
+#pragma mark - DEPRECATED
 
 +(void)getLiveHomepageDataWithSuccess:(void(^ _Nullable)(LiveHomeModel * _Nullable))success failure:(void(^ _Nullable)(void))failure;
 +(void)getRecommendationHomepageDataWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
@@ -76,25 +151,10 @@
                                 success:(void(^ _Nullable)(BangumiHomeModel * _Nullable))success
                                 failure:(void(^ _Nullable)(void))failure;
 
-
-#pragma mark - POST
-
-+(void)commentVideo:(NSString * _Nonnull)ID content:(NSString * _Nonnull)text
-            success:(void (^ _Nullable)(BilibiliResult * _Nullable))success
-            failure:(void (^ _Nullable)(void))failure;
-
-+(void)addFavoriteVideo:(NSString * _Nonnull)ID
-                success:(void(^ _Nullable)(BilibiliResult * _Nullable))success
-                failure:(void(^ _Nullable)(void))failure;
-
-+(void)deleteFavoriteVideo:(NSString * _Nonnull)ID
-                   success:(void(^ _Nullable)(BilibiliResult * _Nullable))success
-                   failure:(void(^ _Nullable)(void))failure;
-
 @end
 
 
-#pragma mark - Feedback
+#pragma mark - Feedback (DEPRECATED)
 
 @class BilibiliData;
 

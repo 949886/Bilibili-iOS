@@ -10,6 +10,21 @@
 
 @implementation UIView (Extension)
 
+-(UINavigationController *)navigationController
+{
+    for (UIView *view = self; view; view = view.superview)
+    {
+        UIResponder * nextResponder = [view nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]])
+        {
+            UIViewController * viewController = (UIViewController *)nextResponder;
+            if (viewController.navigationController != nil)
+                return viewController.navigationController;
+        }
+    }
+    return nil;
+}
+
 - (void)printViewHierarchy
 {
     static uint level = 0;
@@ -40,6 +55,7 @@
         [subview traverseSubviews:block];
 }
 
+
 - (UIImage *)captureImage
 {
     UIGraphicsBeginImageContext(self.bounds.size);
@@ -53,7 +69,7 @@
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
-- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
+-(void)image: (UIImage *)image didFinishSavingWithError: (NSError *)error contextInfo: (void *)contextInfo
 {
     NSString *msg = nil ;
     if(error != NULL) msg = @"保存失败，请确认相册权限已打开";

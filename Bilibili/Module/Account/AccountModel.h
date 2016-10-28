@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AccountModel : NSObject
+#import "UserModel.h"
+
+@interface AccountModel : NSObject <NSCoding, NSCopying>
+
+@property (nonatomic, strong) UserModel * user;
+@property (nonatomic, strong) NSString * cookie;        //CookieValue
+@property (nonatomic, assign) NSInteger expiresIn;      //必须有值，值为过期日期的时间戳
 
 @end

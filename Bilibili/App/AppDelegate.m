@@ -14,7 +14,6 @@
 
 #import "BilibiliAPI.h"
 #import "BilibiliVideoAPI.h"
-#import "BilibiliDanmakuParser.h"
 
 #import "Downloader.h"
 
@@ -125,7 +124,7 @@ void handleException(NSException * exception);
 
 void handleException(NSException * exception)
 {
-    [exception name];
-    [exception reason];
-    [exception callStackSymbols];
+//    [exception name];
+//    [exception reason];
+//    [exception callStackSymbols];
 }

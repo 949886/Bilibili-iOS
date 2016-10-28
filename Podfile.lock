@@ -45,7 +45,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
   - FMDB (~> 2.6)
-  - GPUImage
+  - GPUImage (~> 0.1)
   - JSPatch (~> 1.1)
   - MJRefresh (~> 3.1)
   - ReactiveCocoa (= 4.0.0)

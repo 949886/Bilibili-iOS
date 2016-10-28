@@ -13,11 +13,11 @@
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     UIView * view = self;
-    for (UIView *subView in self.subviews) {
+    for (UIView *subView in self.subviews)
+    {
         CGPoint p = [subView convertPoint:point fromView:self];
-        if (CGRectContainsPoint(subView.bounds, p)) {
+        if (CGRectContainsPoint(subView.bounds, p))
             view = subView;
-        }
     }
     return view;
 }

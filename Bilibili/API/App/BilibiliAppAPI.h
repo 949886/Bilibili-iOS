@@ -13,12 +13,26 @@
 
 @interface BilibiliAppAPI : NSObject
 
+#pragma mark Live
+
 +(void)getLiveHomeWithSuccess:(SuccessBlock(LiveHomeModel))success
                       failure:(FailureBlock)failure;
+
++(void)getLiveRoomIndexWithRoomID:(NSInteger)roomID
+                          success:(SuccessBlock(LiveRoomModel))success
+                          failure:(FailureBlock)failure;
+
++(void)getLiveRoomMessagesWithRoomID:(NSInteger)roomID
+                             success:(SuccessBlock(LiveMessagesModel))success
+                             failure:(FailureBlock)failure;
+
+#pragma mark Recommendation
 
 +(void)getRecommendHomeWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
                           success:(SuccessBlock(NSArray<RecommendSegment *>))success
                           failure:(FailureBlock)failure;
+
+#pragma mark Bangumi
 
 +(void)getBangumiHomeWithDevice:(NSInteger)option //0 is iPhone, 1 is iPad
                         success:(SuccessBlock(BangumiHomeModel))success
@@ -28,5 +42,13 @@
                             pageSize:(NSInteger)pageSize
                              success:(SuccessBlock(NSArray<BangumiRecommendModel *>))success
                              failure:(FailureBlock)failure;
+
++(void)getBangumiInfoWithSid:(NSInteger)seasonID
+                     success:(SuccessBlock(BangumiModel))success
+                     failure:(FailureBlock)failure;
+
++(void)getRelativeBangumisWithSid:(NSInteger)seasonID
+                          success:(SuccessBlock(RelativeBangumisModel))success
+                          failure:(FailureBlock)failure;
 
 @end

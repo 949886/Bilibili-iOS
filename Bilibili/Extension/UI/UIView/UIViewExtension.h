@@ -10,6 +10,8 @@
 
 @interface UIView (Extension)
 
+@property (nonatomic, readonly) UINavigationController * navigationController;
+
 - (void)printViewHierarchy;
 - (void)traverseSubviews:(void (^)(UIView * view))block;
 

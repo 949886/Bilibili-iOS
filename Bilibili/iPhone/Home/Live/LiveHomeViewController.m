@@ -25,7 +25,7 @@
 @property (nonatomic, weak) ImageSlider * imageSlider;
 
 @property (nonatomic, strong) LiveHomeModel * data;
-@property (nonatomic, copy) NSMutableArray * segmentsData;
+@property (nonatomic, strong) NSMutableArray * segmentsData;
 
 @end
 
@@ -37,7 +37,14 @@
 {
     [super viewDidLoad];
     
+    __weak typeof(self) weakSelf = self;
+    
     _segmentsData = [NSMutableArray new];
+    
+    [self.tableView registerNib: [UINib nibWithNibName:@"SegmentCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+    }];
     
     //初始化Header
     LiveHomeHeader * header = [[[NSBundle mainBundle] loadNibNamed:@"LiveHomeHeader" owner:nil options:nil] firstObject];
@@ -50,10 +57,13 @@
     //imageSlider.images = @[@"2.jpg", @"3.jpg"];
     self.imageSlider = imageSlider;
     
+    @weakify(self);
     [self.imageSlider handleClickEvent:^(NSInteger index) {
+        @strongify(self);
+        
         //对不同类型的banner进行不同的操作(bangumi:番剧 weblink:网页 apk:游戏广告)
-        if(_data.banners.count <= index) return;
-        BannerModel * banner = _data.banners[index];
+        if(self.data.banners.count <= index) return;
+        BannerModel * banner = self.data.banners[index];
         
         //weblink
         if ([banner.url isNotBlank])
@@ -128,15 +138,15 @@
         @strongify(self)
         if (!self) return;
         
-        _data = object;
-        _segmentsData = object.partitions.mutableCopy;
-        [_segmentsData insertObject:object.recommendData atIndex:0];
+        self.data = object;
+        self.segmentsData = object.partitions.mutableCopy;
+        [self.segmentsData insertObject:object.recommendData atIndex:0];
         
         //设置图片轮播器图片
         NSMutableArray * imageURLs = [NSMutableArray array];
-        for (BannerModel * banner in _data.banners)
+        for (BannerModel * banner in self.data.banners)
             [imageURLs addObject:banner.imageurl];
-        _imageSlider.urls = imageURLs;
+        self.imageSlider.urls = imageURLs;
         
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];

@@ -6,6 +6,8 @@
   Copyright © 2016年 LunarEclipse. All rights reserved.
 */
 
+"cancle" = "取消";
+
 "home_live_moreInfo" = "当前%ld个直播，进去看看";
 
 "home_recommend_moreInfo" = "更多%@";
@@ -24,3 +26,37 @@
 "video_relative_upper" = "Up主:  %@";
 "video_relative_playCount" = "播放:  %ld";
 "video_relative_danmakuCount" = "弹幕:  %ld";
+"video_actionSheet_report" = "举报";
+
+"bangumi_title" = "番剧详情";
+"bangumi_unfinished" = "连载中，每周%@更新";
+"bangumi_finished" = "已完结";
+"bangumi_status" = "播放：%@  订阅：%@";
+"bangumi_episode" = "第 %ld 话";
+"bangumi_chooseEpisodes" = "选集 （%ld）";
+"bangumi_update" = "更新 第 %ld 话";
+"bangumi_updateFinished" = "全 %ld 话";
+"bangumi_comments" = "第 %ld 话 评论 (%ld)";
+
+"bp_sponsors" = "已有%ld人承包了这部番";
+"bp_noSponsors" = "暂无人承包";
+"bp_sponsorsWeekly" = "等%ld人七日内承包";
+"bp_noSponsorsWeekly" = "快来抢占七日榜(ﾟДﾟ≡ﾟдﾟ)!?";
+
+"comment_more_hot_comments" = "更多热门评论>>";
+"comment_actionSheet_report" = "举报";
+
+"profile_user_center" = "个人中心";
+"profile_user_message" = "我的消息";
+"profile_download" = "离线缓存";
+"profile_history" = "历史记录";
+"profile_favoriate" = "我的收藏";
+"profile_follow" = "我的关注";
+"profile_pocketcenter" = "我的钱包";
+"profile_gamecenter" = "游戏中心";
+"profile_theme" = "主题选择";
+"profile_answerMessage" = "回复我的";
+"profile_shakeMe" = "@我";
+"profile_gotPrise" = "收到的赞";
+"profile_privateMessage" = "私信";
+"profile_systemNotification" = "系统通知";

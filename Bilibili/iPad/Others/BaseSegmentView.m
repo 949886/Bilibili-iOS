@@ -74,7 +74,7 @@
 
     
     //设置边距（margin & padding）
-    self.bounds = CGRectMake(0, 0, self.bounds.size.width - _margin.left - _margin.right, self.bounds.size.height - _margin.top - _margin.bottom);
+//    self.bounds = CGRectMake(0, 0, self.bounds.size.width - _margin.left - _margin.right, self.bounds.size.height - _margin.top - _margin.bottom);
     _collectionView.bounds = CGRectMake(0, 0, _collectionView.bounds.size.width - _padding.left - _padding.right, _collectionView.bounds.size.height - _padding.top - _padding.bottom);
     
     if (_columns >= 1)

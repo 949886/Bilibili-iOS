@@ -36,7 +36,14 @@
 {
     [super viewDidLoad];
     
+    __weak typeof(self) weakSelf = self;
+    
     _segmentsData = [NSMutableArray new];
+    
+    [self.tableView registerNib: [UINib nibWithNibName:@"SegmentCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+    }];
     
     //初始化图片轮播器
     ImageSlider * imageSlider = [[ImageSlider alloc]initWithFrame:CGRectMake(0, 0, self.tableView.width, 120)];
@@ -45,7 +52,10 @@
     self.imageSlider = imageSlider;
     self.tableView.tableHeaderView = imageSlider;
     
+    @weakify(self);
     [self.imageSlider handleClickEvent:^(NSInteger index) {
+        @strongify(self);
+        
         //对不同类型的banner进行不同的操作(bangumi:番剧 weblink:网页 apk:游戏广告)
 //        if(_data.banners.count <= index) return;
 //        BannerModel * banner = _data.banners[index];
@@ -109,14 +119,14 @@
         @strongify(self)
         if (!self) return;
         
-        _data = object;
-        _segmentsData = object.mutableCopy;
+        self.data = object;
+        self.segmentsData = object.mutableCopy;
 
         //设置图片轮播器图片
         NSMutableArray * imageURLs = [NSMutableArray array];
-        for (BannerModel * banner in _data.firstObject.banners)
+        for (BannerModel * banner in self.data.firstObject.banners)
             [imageURLs addObject:banner.imageurl];
-        _imageSlider.urls = imageURLs;
+        self.imageSlider.urls = imageURLs;
 
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];

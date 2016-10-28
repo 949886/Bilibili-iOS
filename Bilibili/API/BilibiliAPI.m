@@ -8,8 +8,7 @@
 
 #import "BilibiliAPI.h"
 
-#import "APPConstants.h"
-#import "URLConstants.h"
+#import "BilibiliURL.h"
 
 #import "BilibiliAppAPI.h"
 #import "BilibiliUserAPI.h"
@@ -24,6 +23,19 @@ if (integer_code != 0) { \
     if(failure) failure(); \
 } \
 else {if(success) success(_result_);}
+
+#define PLATFORM  @"ios"
+#define DEVICE ([[UIDevice currentDevice].model isEqualToString:@"iPad"] ? @"pad" : @"phone")
+
+/* TEST */
+
+#define APP_KEY @"86385cdc024c0f6c"
+#define ACCESS_KEY @"bb414b00fc0465fdd879e3ac09f80be8"
+#define SIGN @"6e459ab22503751d6083cca0e712474b"
+
+#define LIVE_APP_KEY @"27eb53fc9058f8c3"
+#define LIVE_ACCESS_KEY @"99d02371222f07c14779faf9193c7bdf"
+#define LIVE_SIGN @"54b5fe76ce29f5f4052941a61a158a21"
 
 #pragma mark - API
 
@@ -46,7 +58,7 @@ else {if(success) success(_result_);}
     return nil;
 }
 
-#pragma mark GET
+#pragma mark DEPRECATED
 
 /* 应用数据 */
 
@@ -167,98 +179,13 @@ else {if(success) success(_result_);}
     }];
 }
 
-#pragma mark POST
-
-+(void)commentVideo:(NSString * _Nonnull)ID content:(NSString * _Nonnull)text
-            success:(void (^ _Nullable)(BilibiliResult * _Nullable))success
-            failure:(void (^ _Nullable)(void))failure
-{
-    NSDictionary * parameters = @{@"_device" : @"ios",
-                                  @"_hwid" : @"4d70e86e50b6bfe8",
-                                  @"_ulv" : @"10000",
-                                  @"access_key" : ACCESS_KEY,
-                                  @"appkey" : APP_KEY,
-                                  @"appver" : @"101220",
-                                  @"message" : text,
-                                  @"oid" : ID,
-                                  @"plat" : @"5",
-                                  @"platform" : PLATFORM,
-                                  @"sign" : SIGN,
-                                  @"type" : @"1"};
-    
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-    [manager POST:BILIBILI_ADD_REPLY parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BilibiliResult * result = [BilibiliResult modelWithDictionary:responseObject];
-        IfSuccess(result);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
-        if(failure) failure();
-    }];
-}
-
-
-
-+(void)addFavoriteVideo:(NSString * _Nonnull)ID
-                 success:(void(^ _Nullable)(BilibiliResult * _Nullable))success
-                 failure:(void(^ _Nullable)(void))failure
-{
-    NSDictionary * parameters = @{@"_device" : @"ios",
-                                  @"_hwid" : @"4d70e86e50b6bfe8",
-                                  @"_ulv" : @"10000",
-                                  @"access_key" : ACCESS_KEY,
-                                  @"appkey" : APP_KEY,
-                                  @"appver" : @"3430",
-                                  @"build" : @"3430",
-                                  @"aid" : ID,
-                                  @"platform" : PLATFORM,
-                                  @"sign" : SIGN,
-                                  @"type" : @"json"};
-    
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-    [manager POST:BILIBILI_ADD_FAVOURIATE_VIDEO parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BilibiliResult * result = [BilibiliResult modelWithDictionary:responseObject];;
-        if(result.data.favoured) NSLog(@"[BilibiliAPI.addFavoriteVideo]已经收藏过了");
-        
-        IfSuccess(result);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
-        if(failure) failure();
-    }];
-}
-
-+(void)deleteFavoriteVideo:(NSString * _Nonnull)ID
-                 success:(void(^ _Nullable)(BilibiliResult * _Nullable))success
-                 failure:(void(^ _Nullable)(void))failure
-{
-    NSDictionary * parameters = @{@"_device" : @"ios",
-                                  @"_hwid" : @"4d70e86e50b6bfe8",
-                                  @"_ulv" : @"10000",
-                                  @"access_key" : ACCESS_KEY,
-                                  @"appkey" : APP_KEY,
-                                  @"appver" : @"3430",
-                                  @"build" : @"3430",
-                                  @"aid" : ID,
-                                  @"platform" : PLATFORM,
-                                  @"sign" : SIGN,
-                                  @"type" : @"json"};
-    
-    AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
-    [manager POST:BILIBILI_DELETE_FAVOURIATE_VIDEO parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BilibiliResult * result = [BilibiliResult modelWithDictionary:responseObject];
-        if(!result.data.favoured) NSLog(@"[BilibiliAPI.addFavoriteVideo]还未收藏");
-        IfSuccess(result);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
-        if(failure) failure();
-    }];
-}
-
 @end
+
 #pragma clang diagnostic pop
 
 
 
-#pragma mark - Feedback
+#pragma mark - Feedback(DEPRECATED)
 
 @implementation BilibiliResult : NSObject
 

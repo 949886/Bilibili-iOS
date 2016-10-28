@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseSegmentView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface BaseSegmentView : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) UICollectionViewFlowLayout * layout;
 

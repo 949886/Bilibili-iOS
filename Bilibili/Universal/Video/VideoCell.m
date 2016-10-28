@@ -1,17 +1,16 @@
 //
-//  VideoCell.m
+//  _m
 //  Bilibili
 //
 //  Created by LunarEclipse on 16/7/11.
 //  Copyright © 2016年 LunarEclipse. All rights reserved.
 //
 
-@import YYKit;
-
 #import "VideoCell.h"
 #import "extension.h"
 
 #import "VideoViewController.h"
+#import "BangumiViewController.h"
 
 @import YYKit;
 @import SDWebImage;
@@ -33,10 +32,19 @@
     _titleLabel.verticalAlignment = VerticalAlignmentTop;
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    VideoViewController * controller = [[VideoViewController alloc] initWithAID:@"12450"];
-    [self.viewController.navigationController pushViewController:controller animated:YES];
+    if ([_element._goto isEqualToString:@"av"])
+    {
+        VideoViewController * controller = [[VideoViewController alloc] initWithAID:[_element.param integerValue]];
+        [self.viewController.navigationController pushViewController:controller animated:YES];
+    }
+    
+    if ([_element._goto isEqualToString:@"bangumi"])
+    {
+        BangumiViewController * controller = [[BangumiViewController alloc] initWithSeasonID:[_element.param integerValue]];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 #pragma mark Encapsulation
@@ -59,14 +67,25 @@
 
 #pragma mark Methods
 
--(void)setup:(RecommendElement *)element
+-(void)setup:(RecommendElement *)element type:(NSString *)type
 {
     _element = element;
     
     _titleLabel.text = element.title;
-    _playCountLabel.text = [NSString stringWithFormat:@"%ld", (long)element.play];
-    _danmakuCountLabel.text = [NSString stringWithFormat:@"%ld", (long)element.danmaku];
     [_imageView sd_setImageWithURL:[NSURL URLWithString:element.cover] placeholderImage:[UIImage imageWithColor:[UIColor lightGrayColor]]];
+    
+    if ([type isEqualToString:@"region"] ||
+        [type isEqualToString:@"recommend"])
+    {
+        _playCountLabel.text = [NSString stringWithFormat:@"%@", [NSString integer2Chinese:element.play]];
+        _danmakuCountLabel.text = [NSString stringWithFormat:@"%ld", (long)element.danmaku];
+    }
+    
+    //若为活动等内容，隐藏播放数和弹幕数。
+    if ([type isEqualToString:@"activity"] ||
+        [type isEqualToString:@"bangumi"])
+        [self hideCountData];
+    else [self showCountData];;
 }
 
 @end
