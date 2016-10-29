@@ -304,7 +304,7 @@
                 <outlet property="bottomContainerView" destination="Dwv-Jc-hUC" id="rpX-fc-JBb"/>
                 <outlet property="endTimeLabel" destination="zDn-ns-MgI" id="ChZ-kz-BLM"/>
                 <outlet property="playButton" destination="iXO-6r-Z7a" id="QHv-CC-T1N"/>
-                <outlet property="playerView" destination="yth-CU-VLN" id="V5Z-c0-MWM"/>
+                <outlet property="playerContainer" destination="yth-CU-VLN" id="cgz-4T-2AG"/>
                 <outlet property="progressView" destination="bue-3a-XCc" id="iJv-Wb-t0L"/>
                 <outlet property="slider" destination="Yh8-fR-Upa" id="iHf-yR-Rc3"/>
                 <outlet property="startTimeLabel" destination="f0H-bC-WTy" id="bju-NQ-Fnz"/>

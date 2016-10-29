@@ -110,8 +110,8 @@
     [_scrollView addSubview:_videoBriefController.tableView];
     
     _commentViewController = [[CommentViewController alloc] initWithAID:_aid];
-    _commentViewController.tableView.frame = _scrollView.bounds;
-    _commentViewController.tableView.left = _videoBriefController.view.right;
+    _commentViewController.view.frame = _scrollView.bounds;
+    _commentViewController.view.left = _videoBriefController.view.right;
     [_scrollView addSubview:_commentViewController.view];
     
     //Setup SegmentedControl
@@ -129,6 +129,13 @@
     __weak typeof(self) weakSelf = self;
     [segmentedControl handleEventWithBlock:^(NSInteger index) { //监听点击
         [weakSelf.scrollView setContentOffset:CGPointMake(index * weakSelf.scrollView.width, 0) animated:YES];
+    }];
+    
+    [[_scrollView rac_valuesForKeyPath:@"contentOffset" observer:nil]subscribeNext:^(id x) {
+        int page = weakSelf.scrollView.contentOffset.x / weakSelf.scrollView.width + 0.5;
+        if(page >= weakSelf.segmentedControl.items.count) return;
+        if(page != weakSelf.segmentedControl.index)
+            weakSelf.segmentedControl.index = page;
     }];
     
     //Load data with API.
@@ -315,14 +322,15 @@
 
 - (IBAction)onClickVideo:(id)sender
 {
-    if (_player)// && [_player isPreparedToPlay])
+    if (_player)
     {
         [_player showInView:_playerView];
         
         _moreButton.hidden = NO;
         [self hideUselessViews];
         
-//        [_player play];
+        if([_player isPreparedToPlay])
+            [_player play];
     }
 }
 

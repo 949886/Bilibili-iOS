@@ -75,14 +75,16 @@ typedef NS_ENUM(NSInteger, VideoPlayerGestureType)
             _volumeSlider = (UISlider*)view;
             break;
         }
+    
+    [IJKFFMoviePlayerController setLogLevel:k_IJK_LOG_SILENT];
 }
 
--(void)dealloc
-{
-    [_player.view removeFromSuperview];
-    [_player shutdown];
-    self.player = nil;
-}
+//-(void)dealloc
+//{
+//    [_player.view removeFromSuperview];
+//    [_player shutdown];
+//    self.player = nil;
+//}
 
 #pragma mark Override
 
@@ -103,20 +105,18 @@ typedef NS_ENUM(NSInteger, VideoPlayerGestureType)
     [self unregisterObserver];
 }
 
--(void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    if (_player) {
-        _player.view.frame = _playerView.bounds;
-    }
-}
-
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
 //    [super touchesEnded:touches withEvent:event];
     
     if (_onClick) _onClick(self);
+}
+
+#pragma mark Should Override
+
+-(UIView *)playerContainer
+{
+    return nil;
 }
 
 #pragma mark Methods
@@ -180,47 +180,24 @@ typedef NS_ENUM(NSInteger, VideoPlayerGestureType)
 {
     _url = url;
     
-    [_player.view removeFromSuperview];
-    _player = nil;
-
-    [self.playerView addSubview:self.player.view];
-}
-
-- (IJKFFMoviePlayerController *)player
-{
-    if (_player == nil && _url != nil)
+    if (_player)
     {
-        //Setup new player.
-        
-        IJKFFOptions * options = [IJKFFOptions optionsByDefault];
-        [options setPlayerOptionValue:@"1" forKey:@"videotoolbox"];
-        
-        IJKFFMoviePlayerController * player = [[IJKFFMoviePlayerController alloc] initWithContentURLString:_url withOptions:options];
-        player.view.frame = self.bounds;
-        player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        player.scalingMode = IJKMPMovieScalingModeAspectFit;
-        player.shouldAutoplay = _shouldAutoplay;
-        [player prepareToPlay];
-        
-        _player = player;
+        [_player.view removeFromSuperview];
+        [_player shutdown];
+        self.player = nil;
     }
     
-    return _player;
+    [self setupPlayer];
 }
 
--(void)setPlayer:(IJKFFMoviePlayerController *)player
+-(void)setPlayerView:(UIView *)playerView
 {
-    _player = player;
-    if (_player == nil) return;
+    _playerView = playerView;
     
-//    if (_player.view.superview)
-//        [_player.view removeFromSuperview];
+    if (_playerView.superview)
+        [_playerView removeFromSuperview];
     
-    player.view.frame = self.bounds;
-    
-    [self.playerView addSubview:player.view];
-    
-    [self log:@"播放器准备完毕..."];
+    [self setupPlayerView];
 }
 
 -(void)setHideWidgets:(BOOL)hideWidgets
@@ -254,6 +231,46 @@ typedef NS_ENUM(NSInteger, VideoPlayerGestureType)
 }
 
 #pragma mark Encapsulation
+
+-(void)setupPlayer
+{
+//    IJKFFOptions * options = [IJKFFOptions optionsByDefault];
+//    [options setPlayerOptionValue:@"1" forKey:@"videotoolbox"];
+//    
+//    IJKFFMoviePlayerController * player = [[IJKFFMoviePlayerController alloc] initWithContentURLString:_url withOptions:options];
+//    player.scalingMode = IJKMPMovieScalingModeAspectFit;
+//    player.shouldAutoplay = _shouldAutoplay;
+//    [player prepareToPlay];
+//    self.player = player;
+    
+    self.playerView = [PlayerView playerViewWithURL:_url];
+    self.player = self.playerView.player;
+    self.player.shouldAutoplay = _shouldAutoplay;
+    self.player.view.frame = self.playerView.bounds;
+    self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.playerView addSubview:self.player.view];
+    
+    [self setupPlayerView];
+    
+    [self log:@"播放器准备完毕..."];
+}
+
+-(void)setupPlayerView
+{
+    UIView * playerContainer = [self playerContainer];
+    if (playerContainer)
+    {
+        [playerContainer addSubview:self.playerView];
+        self.playerView.frame = playerContainer.bounds;
+    }
+    else
+    {
+        [self addSubview:self.playerView];
+        self.playerView.frame = self.bounds;
+    }
+    
+    self.playerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+}
 
 -(void)createGestureRecognizer
 {
@@ -381,9 +398,9 @@ typedef NS_ENUM(NSInteger, VideoPlayerGestureType)
             break;
         case UIGestureRecognizerStateChanged:
             if (_gestureType == VideoPlayerGestureChangeBrightness)
-                [UIScreen mainScreen].brightness -= velocity.y * 0.0001;
+                [UIScreen mainScreen].brightness -= velocity.y * 0.00005;
             if (_gestureType == VideoPlayerGestureChangeVolume)
-                _volumeSlider.value -= velocity.y * 0.0001;
+                _volumeSlider.value -= velocity.y * 0.00005;
             break;
         case UIGestureRecognizerStateEnded:
             _gestureType = VideoPlayerGestureNone;

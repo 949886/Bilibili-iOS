@@ -134,18 +134,21 @@
     }
     else //(indexPath.section == 1)番剧推荐
     {
-        BangumiRecommendModel * recommend;
-        recommend = _recommendData[indexPath.row];
-        
+        BangumiRecommendModel * recommend = _recommendData[indexPath.row];
         BangumiRecommendCell * cell = [tableView dequeueReusableCellWithIdentifier:REC_CELL_ID];
-        cell.titleLabel.text = recommend.title;
-        cell.descriptionLabel.text = recommend.desc;
-        [cell.coverImageView  sd_setImageWithURL:[NSURL URLWithString:recommend.cover] placeholderImage:[UIImage imageWithColor:[UIColor lightGrayColor]]];
+        [cell setup:recommend];
         return cell;
     }
 }
 
-/* ScrollViewDelegate */
+/* TableView Delegate */
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+/* ScrollView Delegate */
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {

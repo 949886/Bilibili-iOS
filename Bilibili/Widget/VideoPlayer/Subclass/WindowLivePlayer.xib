@@ -74,7 +74,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="playButton" destination="jP0-hl-WFK" id="aaN-gi-sJj"/>
-                <outlet property="playerView" destination="L34-wF-jCU" id="xQr-hH-1a8"/>
+                <outlet property="playerContainer" destination="L34-wF-jCU" id="75U-7I-9iM"/>
                 <outlet property="smallPlayButton" destination="Mfb-o3-s70" id="F7W-Gm-13b"/>
                 <outlet property="widgetContainterView" destination="uQp-Xd-unB" id="T6r-lC-Ceb"/>
             </connections>

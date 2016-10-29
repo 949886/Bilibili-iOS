@@ -36,33 +36,20 @@
 
 //[API]http://interface.bilibili.com/playurl?appkey=6f90a59ac58a4123&cid=10602259&otype=json&quality=1&type=mp4&sign=7d888135da593bdf822cedfa8bab44d4
 +(void)getPlayURLWithCid:(NSInteger)cid
-                     vid:(NSInteger)vid
-               videoType:(BilibiliVideoType)type
                  quality:(VideoQuarityOptions)quality
                  success:(SuccessBlock(PlayURLModel))success
                  failure:(FailureBlock)failure
 {
-    [self getPlayURLWithCid:cid vid:vid videoType:type format:@"mp4" quality:quality success:success failure:failure];
+    [self getPlayURLWithCid:cid format:@"mp4" quality:quality success:success failure:failure];
 }
 
 /* Private */
 +(void)getPlayURLWithCid:(NSInteger)cid
-                     vid:(NSInteger)vid
-               videoType:(BilibiliVideoType)type
                   format:(NSString *)format // "mp4" "hdmp4" "flv"
                  quality:(VideoQuarityOptions)quality
                  success:(SuccessBlock(PlayURLModel))success
                  failure:(FailureBlock)failure
 {
-    NSDictionary * headers;
-    if (type == BilibiliVideoTypeNormal)
-        headers = @{@"Referer" : [NSString stringWithFormat:BILIBILI_LINK_AV, @(vid)],
-                    @"Origin" : @"http://www.bilibili.com",
-                    @"User-Agent" : @"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36",
-                    @"Accept-Language" : @"en-US,en;q=0.8",
-                    @"Cookie" : @"fts=1476616618; pgv_pvi=5704434688; pgv_si=s6333356032; sid=7smc8t1u"};
-    else headers = @{@"Referer" : [NSString stringWithFormat:BILIBILI_LINK_BANGUMI, @(vid)]};
-    
     NSMutableDictionary * parameters = @{@"appkey" : APP_KEY,
                                          @"cid" : @(cid),
                                          @"otype" : @"json",
@@ -70,7 +57,7 @@
                                          @"type" : format }.mutableCopy;
     parameters[@"sign"] = [BilibiliAuth generateSign:parameters];
     
-    [BilibiliRequest GET:BILIBILI_VIDEO_PLAYURL parameters:parameters extraHeaders:headers clazz:[PlayURLModel class] progress:nil success:success failure:failure];
+    [BilibiliRequest GET:BILIBILI_VIDEO_PLAYURL parameters:parameters clazz:[PlayURLModel class] progress:nil success:success failure:failure];
 }
 
 +(void)getDanmakuWithAid:(NSInteger)aid

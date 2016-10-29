@@ -8,22 +8,24 @@
 
 #import "DanmakuVideoPlayer.h"
 
+#define NC [NSNotificationCenter defaultCenter]
+
 @implementation DanmakuVideoPlayer
 
 -(void)setDanmakuView:(DanmakuView *)danmakuView
 {
     _danmakuView = danmakuView;
     
-    if(danmakuView.superview)
+    if(danmakuView.superview == nil)
     {
-        [danmakuView unregisterVideoPlayerObserver];
-        [danmakuView removeFromSuperview];
+        _danmakuView.frame = self.player.view.bounds;
+        _danmakuView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [self.player.view addSubview:_danmakuView];
     }
     
-    _danmakuView.frame = self.player.view.bounds;
-    _danmakuView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [danmakuView unregisterVideoPlayerObserver];
+    //        [danmakuView removeFromSuperview];
     [_danmakuView registerVideoPlayerObserver:self];
-    [self.player.view addSubview:_danmakuView];
 }
 
 -(void)onBufferingStart
@@ -43,17 +45,24 @@
 
 -(void)registerVideoPlayerObserver:(VideoPlayer *)player
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVideoPlayerPlay:) name:VideoPlayerPlayNotification object:player];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVideoPlayerPause:) name:VideoPlayerPauseNotification object:player];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVideoPlayerEnterFullScreen:) name:VideoPlayerEnterWindowNotification object:player];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVideoPlayerEnterWindow:) name:VideoPlayerEnterFullscreenNotification object:player];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVideoPlayerStartBuffering:) name:VideoPlayerStartBufferingNotification object:player];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVideoPlayerEndBuffering:) name:VideoPlayerEndBufferingNotification object:player];
+    [NC addObserver:self selector:@selector(onVideoPlayerPlay:) name:VideoPlayerPlayNotification object:player];
+    [NC addObserver:self selector:@selector(onVideoPlayerPause:) name:VideoPlayerPauseNotification object:player];
+    [NC addObserver:self selector:@selector(onVideoPlayerEnterWindow:) name:VideoPlayerEnterWindowNotification object:player];
+    [NC addObserver:self selector:@selector(onVideoPlayerEnterFullScreen:) name:VideoPlayerEnterFullscreenNotification object:player];
+    [NC addObserver:self selector:@selector(onVideoPlayerStartBuffering:) name:VideoPlayerStartBufferingNotification object:player];
+    [NC addObserver:self selector:@selector(onVideoPlayerEndBuffering:) name:VideoPlayerEndBufferingNotification object:player];
+    [NC addObserver:self selector:@selector(onVideoPlayerJump:) name:VideoPlayerJumpNotification object:player];
 }
 
 -(void)unregisterVideoPlayerObserver
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NC removeObserver:self name:VideoPlayerPlayNotification object:nil];
+    [NC removeObserver:self name:VideoPlayerPauseNotification object:nil];
+    [NC removeObserver:self name:VideoPlayerEnterWindowNotification object:nil];
+    [NC removeObserver:self name:VideoPlayerEnterFullscreenNotification object:nil];
+    [NC removeObserver:self name:VideoPlayerStartBufferingNotification object:nil];
+    [NC removeObserver:self name:VideoPlayerEndBufferingNotification object:nil];
+    [NC removeObserver:self name:VideoPlayerJumpNotification object:nil];
 }
 
 -(void)onVideoPlayerPlay:(NSNotification *)notification
@@ -86,6 +95,11 @@
 -(void)onVideoPlayerEndBuffering:(NSNotification *)notification
 {
     [self resume];
+}
+
+-(void)onVideoPlayerJump:(NSNotification *)notification
+{
+    [self setCurrentTime:[notification.userInfo.allValues.firstObject doubleValue]];
 }
 
 @end

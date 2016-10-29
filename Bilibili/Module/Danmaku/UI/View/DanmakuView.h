@@ -54,4 +54,6 @@
 -(void)hide;
 -(void)show;
 
+-(void)setCurrentTime:(double)time;
+
 @end

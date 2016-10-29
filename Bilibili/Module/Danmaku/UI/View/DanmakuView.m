@@ -156,6 +156,12 @@
     self.hidden = NO;
 }
 
+-(void)setCurrentTime:(double)time
+{
+    _startTime = [NSDate date].timeIntervalSince1970 - time;
+    _previousTime = time;
+}
+
 #pragma mark Getter & Setter
 
 -(NSArray *)visiableDanmakus

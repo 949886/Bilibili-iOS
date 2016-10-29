@@ -19,6 +19,8 @@
 
 /* Full Screen */
 
+@property (weak, nonatomic) IBOutlet UIView *playerContainer;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 
@@ -155,6 +157,11 @@
     }
 }
 
+-(UIView *)playerContainer
+{
+    return _playerContainer;
+}
+
 #pragma mark Encapsulation
 
 -(NSString *)timeInterval2String:(NSTimeInterval)interval//(s)
@@ -192,7 +199,9 @@
 - (IBAction)onDragSliderFinished:(id)sender
 {
     _isDraggingSlider = NO;
-    [self.player setCurrentPlaybackTime:self.slider.value * self.player.duration];
+    double time = self.slider.value * self.player.duration;
+    [self.player setCurrentPlaybackTime:time];
+    [[NSNotificationCenter defaultCenter] postNotificationName:VideoPlayerJumpNotification object:self userInfo:@{@"time" : @(time)}];
     _timer.fireDate = [NSDate date];
 }
 

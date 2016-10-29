@@ -22,17 +22,8 @@
                    success:(SuccessBlock(VideoModel))success
                    failure:(FailureBlock)failure;
 
-/**
- *  获取视频播放url的接口
- *
- *  @param cid     视频cid
- *  @param vid     若需不限速必须传入此参数以及type，若视频为一般视频传av号，若为番剧传番剧号sid
- *  @param type    BilibiliVideoTypeNormal: 一般视频 BilibiliVideoTypeBangumi:番剧
- *  @param quality 清晰度
- */
+
 +(void)getPlayURLWithCid:(NSInteger)cid
-                     vid:(NSInteger)vid
-               videoType:(BilibiliVideoType)type
                  quality:(VideoQuarityOptions)quality
                  success:(SuccessBlock(PlayURLModel))success
                  failure:(FailureBlock)failure;

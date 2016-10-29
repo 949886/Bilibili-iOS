@@ -24,7 +24,8 @@
 @property (nonatomic, strong) BangumiHeaderController * headerController;
 
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
-@property (nonatomic, strong) UIView * navigationBarBackground;
+@property (nonatomic, strong) UIView * navigationBar;
+
 
 @end
 
@@ -57,20 +58,9 @@
     
     //Init
     _statusBarStyle = UIStatusBarStyleLightContent;
-    _navigationBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, -20, kScreenWidth, 64)];
     
     //Navigatior
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    self.navigationItem.title = NSLocalizedString(@"bangumi_title", nil);
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"common_back_v2"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickBackItem:)];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor clearColor];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor clearColor]};
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar addSubview:_navigationBarBackground];
-    [self.navigationController.navigationBar sendSubviewToBack:_navigationBarBackground];
+    [self.view addSubview:self.navigationBar];
     
     //Header
     _headerController = [BangumiHeaderController new];
@@ -93,33 +83,13 @@
     [self loadBangumi:_sid];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    self.navigationController.navigationBar.alpha = 0;
-    _navigationBarBackground.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    
-    self.navigationController.navigationBar.alpha = 1;
-    self.navigationController.navigationBar.tintColor = nil;
-    self.navigationController.navigationBar.titleTextAttributes = nil;
-    
-    [_navigationBarBackground removeFromSuperview];
-}
-
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return _statusBarStyle;
 }
 
 #pragma mark Delegate
+
 
 /* ScrollView Delegate */
 
@@ -138,7 +108,7 @@
         [self setNeedsStatusBarAppearanceUpdate];
     
     //更新navigationBar透明度
-    self.navigationController.navigationBar.alpha = offset / 50;
+    self.navigationBar.alpha = offset / 50;
 }
 
 
@@ -177,6 +147,36 @@
 - (void)onClickBackItem:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark Getter & Setter
+
+- (UIView *)navigationBar
+{
+	if (_navigationBar == nil)
+    {
+        CGFloat height = 64;
+        
+        _navigationBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, height)];
+        _navigationBar.backgroundColor = [UIColor whiteColor];
+        _navigationBar.alpha = 0;
+        
+        UILabel * label = [UILabel new];
+        label.text = NSLocalizedString(@"bangumi_title", nil);
+        label.textColor = [UIColor darkGrayColor];
+        [label sizeToFit];
+        label.centerX = _navigationBar.width * 0.5;
+        label.centerY = _navigationBar.height * 0.5 + 10;
+        [_navigationBar addSubview: label];
+        
+        UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.frame = CGRectMake(-12, 20, height, height - 20);
+        button.tintColor = [UIColor darkGrayColor];
+        [button setImage:[UIImage imageNamed:@"common_back_v2"]  forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(onClickBackItem:) forControlEvents:UIControlEventTouchUpInside];
+        [_navigationBar addSubview: button];
+	}
+	return _navigationBar;
 }
 
 @end

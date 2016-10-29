@@ -12,7 +12,7 @@
 
 @class BangumiModel;
 
-@interface BangumiViewController : CommentViewController
+@interface BangumiViewController : CommentViewController 
 
 -(instancetype)initWithBangumi:(BangumiModel *)bangumi;
 -(instancetype)initWithSeasonID:(NSInteger)sid;

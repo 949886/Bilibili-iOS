@@ -111,7 +111,7 @@
             <connections>
                 <outlet property="endTimeLabel" destination="4X7-4p-GiG" id="dBB-8l-soP"/>
                 <outlet property="playButton" destination="jP0-hl-WFK" id="aaN-gi-sJj"/>
-                <outlet property="playerView" destination="L34-wF-jCU" id="xQr-hH-1a8"/>
+                <outlet property="playerContainer" destination="L34-wF-jCU" id="LbZ-DQ-blS"/>
                 <outlet property="progressView" destination="OpE-wg-wgF" id="0oB-3t-FUY"/>
                 <outlet property="slider" destination="XdA-U9-9Mp" id="woB-rr-2Eq"/>
                 <outlet property="smallPlayButton" destination="Mfb-o3-s70" id="F7W-Gm-13b"/>

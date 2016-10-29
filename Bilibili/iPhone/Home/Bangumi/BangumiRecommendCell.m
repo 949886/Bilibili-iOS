@@ -8,13 +8,19 @@
 
 #import "BangumiRecommendCell.h"
 #import "BangumiRecommendModel.h"
+
 #import "BilibiliAPI.h"
+#import "extension.h"
+
+#import "BangumiViewController.h"
 
 @import YYKit;
+@import SDWebImage;
 @import ReactiveCocoa;
 
 @interface BangumiRecommendCell ()
 
+@property (nonatomic, strong) BangumiRecommendModel * recommend;
 
 @end
 
@@ -37,9 +43,35 @@
     
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+-(void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
+    [super setSelected:NO animated:animated];
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (_recommend == nil) return;
     
+    NSString * perfix = @"http://bangumi.bilibili.com/anime/";
+    if ([_recommend.link hasPrefix:perfix])
+    {
+        NSInteger sid = [[_recommend.link substringFromIndex:perfix.length] integerValue];
+        BangumiViewController * controller = [[BangumiViewController alloc] initWithSeasonID:sid];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else
+    {
+
+    }
+}
+
+-(void)setup:(BangumiRecommendModel *)recommend
+{
+    _recommend = recommend;
+    
+    self.titleLabel.text = recommend.title;
+    self.descriptionLabel.text = recommend.desc;
+    [self.coverImageView  sd_setImageWithURL:[NSURL URLWithString:recommend.cover] placeholderImage:[UIImage imageWithColor:[UIColor lightGrayColor]]];
 }
 
 

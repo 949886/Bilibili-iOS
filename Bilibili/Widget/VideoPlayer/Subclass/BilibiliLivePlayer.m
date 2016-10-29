@@ -12,6 +12,9 @@
 
 /* Full Screen */
 
+@property (weak, nonatomic) IBOutlet UIView *playerContainer;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 
@@ -128,6 +131,11 @@
             
         }];
     }
+}
+
+-(UIView *)playerContainer
+{
+    return _playerContainer;
 }
 
 #pragma mark IBAction

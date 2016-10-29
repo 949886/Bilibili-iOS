@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CommentViewController : UITableViewController
+@interface CommentViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) NSInteger aid;
 @property (nonatomic, assign) NSInteger page;
+
+@property (nonatomic, strong) UITableView * tableView;
 
 -(instancetype)initWithAID:(NSInteger)aid;
 

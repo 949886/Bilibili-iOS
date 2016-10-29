@@ -26,7 +26,7 @@
 
 -(instancetype)initWithAID:(NSInteger)aid
 {
-    if (self = [super initWithStyle:UITableViewStyleGrouped]) {
+    if (self = [super initWithNibName:nil bundle:nil]) {
         _aid = aid;
         _page = 1;
     }
@@ -41,8 +41,15 @@
     
     __weak typeof(self) weakSelf = self;
     
+    if (self.navigationController)
+        self.navigationController.delegate = self;
+    
     //Tableview.
     
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.000];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, -44, 0);
@@ -51,17 +58,26 @@
     self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
         [weakSelf loadComments];
     }];
+    [self.view addSubview:self.tableView];
     
     MJRefreshAutoFooter * footer = (MJRefreshAutoFooter *)self.tableView.mj_footer;
     footer.triggerAutomaticallyRefreshPercent = -2.5;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CommentCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     
-    
     [self loadComments];
 }
 
 #pragma mark Delegate
+
+/* UINavigationControllerDelegate */
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    //隐藏导航栏
+    [navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 
 /* TableViewDataSource */
 

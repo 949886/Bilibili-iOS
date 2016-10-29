@@ -8,6 +8,8 @@
 
 /* 基于IJKPlayer */
 
+#import "PlayerView.h"
+
 @class VideoPlayerController;
 
 @import UIKit;
@@ -23,9 +25,10 @@
 @property (nonatomic, assign, readonly) BOOL isPreparedToPlay;
 
 @property (nonatomic, weak) VideoPlayerController * controller;
-@property (nonatomic, strong) IJKFFMoviePlayerController * player;
+@property (nonatomic, weak) IJKFFMoviePlayerController * player;  //Delegate
 
-@property (nonatomic, weak) IBOutlet UIView *playerView;
+//Never user player.view directly. Use playerView instead.
+@property (nonatomic, strong) PlayerView * playerView;
 
 @property (nonatomic, copy) void (^onClick)(VideoPlayer *);
 
@@ -42,7 +45,9 @@
 -(void)log:(NSString *)text;    //在小电视页面写入加载状态
 
 
-/* To be overrided */
+/* Should be overrided */
+
+-(UIView *)playerContainer; // If provided a container, video player will show in container. Otherwise, it will show in self. Default is nil(show in self).
 
 -(void)onBufferingStart;
 -(void)onBufferingEnd;
@@ -61,3 +66,4 @@ static NSString * const VideoPlayerEnterFullscreenNotification = @"VideoPlayerEn
 static NSString * const VideoPlayerPlayTimeChangeNotification = @"VideoPlayerPlayTimeChangeNotification";
 static NSString * const VideoPlayerStartBufferingNotification = @"VideoPlayerStartBufferingNotification";
 static NSString * const VideoPlayerEndBufferingNotification = @"VideoPlayerEndBufferingNotification";
+static NSString * const VideoPlayerJumpNotification = @"VideoPlayerJumpNotification";

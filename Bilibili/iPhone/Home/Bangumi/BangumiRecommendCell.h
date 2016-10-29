@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class BangumiRecommendModel;
+
 @interface BangumiRecommendCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+-(void)setup:(BangumiRecommendModel *)recommend;
 
 @end

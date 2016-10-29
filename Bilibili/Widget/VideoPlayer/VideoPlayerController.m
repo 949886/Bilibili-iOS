@@ -141,31 +141,44 @@
     {
         [_windowPlayer hideWidgets:YES animated:NO];
 
-        //动画，暂时有闪屏BUG，不采用
-//        [UIView animateWithDuration:0.5 animations:^{
-//            weakSelf.windowPlayer.player.view.transform = CGAffineTransformMakeRotation(M_PI_2);
-//            weakSelf.windowPlayer.player.view.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
-//        }completion:^(BOOL finished) {
-//        }];
+        CGRect rect = [UIScreen mainScreen].bounds;
         
-        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self animated:NO completion:^{
-            CGRect rect = [UIScreen mainScreen].bounds;
-            
-            weakSelf.windowPlayer.player.view.transform = CGAffineTransformIdentity;
-            weakSelf.view.frame = rect;
-            weakSelf.fullScreenPlayer.frame = rect;
-            weakSelf.fullScreenPlayer.player = weakSelf.windowPlayer.player;
-            weakSelf.windowPlayer.player = nil;   //神奇的BUG
-
-            weakSelf.danmakuView.frame = weakSelf.player.bounds;
+        //动画，暂时有闪屏BUG，不采用
+        [UIView animateWithDuration:0.5 animations:^{
+            weakSelf.windowPlayer.playerView.transform = CGAffineTransformMakeRotation(M_PI_2);
+            weakSelf.windowPlayer.playerView.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
+        }completion:^(BOOL finished) {
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self animated:NO completion:^{
+                CGRect rect = [UIScreen mainScreen].bounds;
+                
+                weakSelf.windowPlayer.playerView.transform = CGAffineTransformIdentity;
+                weakSelf.view.frame = rect;
+                
+                weakSelf.fullScreenPlayer.playerView = weakSelf.windowPlayer.playerView;
+                weakSelf.fullScreenPlayer.frame = rect;
+                weakSelf.fullScreenPlayer.player = weakSelf.windowPlayer.player;
+                
+                if ([weakSelf.windowPlayer isKindOfClass:[DanmakuVideoPlayer class]] &&
+                    [weakSelf.fullScreenPlayer isKindOfClass:[DanmakuVideoPlayer class]]) {
+                    DanmakuVideoPlayer * dvpw = (DanmakuVideoPlayer *)weakSelf.windowPlayer;
+                    DanmakuVideoPlayer * dvpf = (DanmakuVideoPlayer *)weakSelf.fullScreenPlayer;
+                    dvpf.danmakuView = dvpw.danmakuView;
+                }
+            }];
         }];
+  
     }
     else
     {
+        self.windowPlayer.playerView = self.fullScreenPlayer.playerView;
         self.windowPlayer.player = self.fullScreenPlayer.player;
-        self.fullScreenPlayer.player = nil;   //神奇的BUG
-
-        self.danmakuView.frame = self.player.bounds;
+        
+        if ([weakSelf.windowPlayer isKindOfClass:[DanmakuVideoPlayer class]] &&
+            [weakSelf.fullScreenPlayer isKindOfClass:[DanmakuVideoPlayer class]]) {
+            DanmakuVideoPlayer * dvpw = (DanmakuVideoPlayer *)weakSelf.windowPlayer;
+            DanmakuVideoPlayer * dvpf = (DanmakuVideoPlayer *)weakSelf.fullScreenPlayer;
+            dvpw.danmakuView = dvpf.danmakuView;
+        }
         
         [self dismissViewControllerAnimated:NO completion:nil];
     }

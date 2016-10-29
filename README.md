@@ -1,19 +1,17 @@
-Progress: 25%
-Lines: 10051
 
 [![Support](https://img.shields.io/badge/support-iOS%208%2b-green.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 [![XCode](https://img.shields.io/badge/Xcode-v7.2.0-6699FF.svg?style=flat)](https://developer.apple.com/xcode/)&nbsp;
 [![CocoaPods](https://img.shields.io/badge/pod-v0.39.0-orange.svg?style=flat)](https://cocoapods.org/)&nbsp;
 
-## 三方框架
+
+## Third-party Frameworks
 
 Framework
  - [AFNetworking](https://github.com/AFNetworking/AFNetworking) 网络图片资源的异步加载与缓存
  - [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) 响应式函数编程(FRP)框架 
- - [FMDB](https://github.com/ccgus/fmdb) 轻量级SQLite数据库框架
  - [JSPatch](https://github.com/bang590/JSPatch)  使用JavaScript编写原生iOS程序
  - [YYKit](https://github.com/ibireme/YYKit) 一组庞大且功能丰富的iOS组件
- - [GPUImage](https://github.com/BradLarson/GPUImage) OC图像处理
+ - [GPUImage](https://github.com/BradLarson/GPUImage) 图像处理
  - [SDWebImage](https://github.com/rs/SDWebImage) 网络图片资源的异步加载与缓存
  - [MJRefresh](https://github.com/CoderMJLee/MJRefresh) 上下拉刷新
 
@@ -22,3 +20,44 @@ UI
 
 Others
  - [ijkplayer](https://github.com/Bilibili/ijkplayer) 基于FFmpeg的iOS/Android视频播放器
+
+<br \>
+
+除了以上三方框架以及YYFPSLabel之外，其他代码全部手撸，包括：
+ - 系统构架
+ - 弹幕系统(基于Core Animation)
+ - B站API
+ - 全部UI及逻辑
+ 
+ 部分模块未完成，持续更新中...
+
+## How to run
+
+ 1. 下载[IJKMediaFramework](http://pan.baidu.com/s/1nvCVBFr)，PWD:rf3s 。
+  将解压的IJKMediaFramework.framework拖进工程中。
+ 2. pod install.
+ 3. Enjoy it.
+
+## Demonstration
+
+ iPhone demo. 
+
+![][Live1.gif] ![][Bangumi1.gif] ![][Bangumi2.gif]
+![][Recommend1.gif] ![][Login.gif] 
+![][Video1.gif]
+
+## API相关
+
+最近B站搞了个大会员，附带了一个等级限速机制，导致最近视频url基本无速度。
+所以还是长者说的对「闷声发大财，这是坠吼滴」。
+
+## License
+
+WTFLP 2
+
+[Live1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Live.gif  "LiveDemo1"
+[Recommend1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Recommend1.gif "RecommendDemo1"
+[Bangumi1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Bangumi1.gif "BangumiDemo1"
+[Bangumi2.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Bangumi2.gif "BangumiDemo2"
+[Video1.gif]: https://github.com/949886/Resources/blob/master/Images/Demo/Bilibili/Video.gif "VideoDemo1"
+[Login.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Login1.gif "LoginDemo"

@@ -67,6 +67,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                     <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-EZ-iz9">
+                    <rect key="frame" x="0.0" y="256" width="375" height="411"/>
+                </scrollView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4T2-68-nMM">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                     <subviews>
@@ -108,9 +111,6 @@
                         </label>
                     </subviews>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9E-EZ-iz9">
-                    <rect key="frame" x="0.0" y="256" width="375" height="411"/>
-                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
