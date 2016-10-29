@@ -4,6 +4,21 @@
 [![CocoaPods](https://img.shields.io/badge/pod-v0.39.0-orange.svg?style=flat)](https://cocoapods.org/)&nbsp;
 
 
+## How to run
+
+ 1. 下载[IJKMediaFramework](http://pan.baidu.com/s/1nvCVBFr)，PWD:rf3s 。
+  将解压的IJKMediaFramework.framework拖进工程中。
+ 2. pod install.
+ 3. Enjoy it.
+
+## Demonstration
+
+ iPhone demo. 
+
+![][Live1.gif] ![][Bangumi1.gif] ![][Bangumi2.gif]
+![][Recommend1.gif] ![][Login.gif] 
+![][Video1.gif]
+
 ## Third-party Frameworks
 
 Framework
@@ -30,27 +45,7 @@ Others
  - 全部UI及逻辑
  
  部分模块未完成，持续更新中...
-
-## How to run
-
- 1. 下载[IJKMediaFramework](http://pan.baidu.com/s/1nvCVBFr)，PWD:rf3s 。
-  将解压的IJKMediaFramework.framework拖进工程中。
- 2. pod install.
- 3. Enjoy it.
-
-## Demonstration
-
- iPhone demo. 
-
-![][Live1.gif] ![][Bangumi1.gif] ![][Bangumi2.gif]
-![][Recommend1.gif] ![][Login.gif] 
-![][Video1.gif]
-
-## API相关
-
-最近B站搞了个大会员，附带了一个等级限速机制，导致最近视频url基本无速度。
-所以还是长者说的对「闷声发大财，这是坠吼滴」。
-
+ 
 ## License
 
 WTFLP 2
