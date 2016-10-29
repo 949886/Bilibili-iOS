@@ -17,8 +17,7 @@
 
 ![][Live1.gif] 　　![][Bangumi1.gif] 　　![][Bangumi2.gif]
 ![][Recommend1.gif]  　　![][Login.gif] 
-<img src="http://img.hb.aicdn.com/b7e5fd237cf3f2c3c7b822ae72743f3c5f46ca29586b0f-JQdhVo_fw658" style="max-width:100%;">
-
+![][Video1.gif]
 
 刷不出来的话：[Click me](http://huaban.com/boards/32708728/)
 
