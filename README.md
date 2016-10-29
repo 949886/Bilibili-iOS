@@ -15,9 +15,10 @@
 
  iPhone demo. 
 
-![][Live1.gif] ![][Bangumi1.gif] ![][Bangumi2.gif]
-![][Recommend1.gif] ![][Login.gif] 
-![][Video1.gif]
+![][Live1.gif] 　![][Bangumi1.gif] 　![][Bangumi2.gif]
+![][Recommend1.gif] ![][Login.gif] ![][Video1.gif]
+
+刷不出来的话：[](http://huaban.com/boards/32708728/)
 
 ## Third-party Frameworks
 
@@ -36,23 +37,25 @@ UI
 Others
  - [ijkplayer](https://github.com/Bilibili/ijkplayer) 基于FFmpeg的iOS/Android视频播放器
 
-<br \>
+<br />
 
 除了以上三方框架以及YYFPSLabel之外，其他代码全部手撸，包括：
  - 系统构架
  - 弹幕系统(基于Core Animation)
  - B站API
  - 全部UI及逻辑
- 
+
+<br />
+
  部分模块未完成，持续更新中...
- 
+
 ## License
 
-WTFLP 2
+WTFPL 2
 
 [Live1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Live.gif  "LiveDemo1"
 [Recommend1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Recommend1.gif "RecommendDemo1"
 [Bangumi1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Bangumi1.gif "BangumiDemo1"
 [Bangumi2.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Bangumi2.gif "BangumiDemo2"
-[Video1.gif]: https://github.com/949886/Resources/blob/master/Images/Demo/Bilibili/Video.gif "VideoDemo1"
+[Video1.gif]: http://img.hb.aicdn.com/b7e5fd237cf3f2c3c7b822ae72743f3c5f46ca29586b0f-JQdhVo_fw658 "VideoDemo1"
 [Login.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Login1.gif "LoginDemo"
