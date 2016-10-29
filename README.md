@@ -15,8 +15,10 @@
 
  iPhone demo. 
 
-![][Live1.gif] 　![][Bangumi1.gif] 　![][Bangumi2.gif]
-![][Recommend1.gif] ![][Login.gif] ![][Video1.gif]
+![][Live1.gif] 　　![][Bangumi1.gif] 　　![][Bangumi2.gif]
+![][Recommend1.gif]  　　![][Login.gif] 
+<img src="http://img.hb.aicdn.com/b7e5fd237cf3f2c3c7b822ae72743f3c5f46ca29586b0f-JQdhVo_fw658" style="max-width:100%;">
+
 
 刷不出来的话：[Click me](http://huaban.com/boards/32708728/)
 
@@ -57,5 +59,5 @@ WTFPL 2
 [Recommend1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Recommend1.gif "RecommendDemo1"
 [Bangumi1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Bangumi1.gif "BangumiDemo1"
 [Bangumi2.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Bangumi2.gif "BangumiDemo2"
-[Video1.gif]: http://img.hb.aicdn.com/b7e5fd237cf3f2c3c7b822ae72743f3c5f46ca29586b0f-JQdhVo_fw658 "VideoDemo"
 [Login.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Login1.gif "LoginDemo"
+[Video1.gif]: https://raw.githubusercontent.com/949886/Resources/master/Images/Demo/Bilibili/Video.gif "VideoDemo"
