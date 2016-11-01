@@ -81,7 +81,7 @@
     
     //获取已下载大小和文件总大小
     NSDictionary * log = [NSDictionary dictionaryWithContentsOfFile:FILE_PATH(DOWNLOAD_LOG)][_tag];
-    _downloadedBytes = FILE_SIZE(log[@"Filename"]);
+    _downloadedBytes = (NSInteger)FILE_SIZE(log[@"Filename"]);
     _totalBytes = [log[@"Size"] integerValue];
     
     if(_totalBytes && _totalBytes == _downloadedBytes)

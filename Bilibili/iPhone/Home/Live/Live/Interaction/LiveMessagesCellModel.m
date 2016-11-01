@@ -36,7 +36,7 @@
     {
         LiveMessageMedal * medal = [LiveMessageMedal defaultMedal];
         medal.titleLabel.text = _liveMessage.medal[1];
-        medal.levelLabel.text = [NSString stringWithFormat:@"%02ld", [_liveMessage.medal[0] integerValue]];
+        medal.levelLabel.text = [NSString stringWithFormat:@"%02ld", (long)[_liveMessage.medal[0] integerValue]];
         
         NSAttributedString * attachment = [NSAttributedString attachmentStringWithContent:medal contentMode:UIViewContentModeBottom attachmentSize:medal.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
         [aString appendAttributedString: attachment];
@@ -48,7 +48,7 @@
     if (_liveMessage.user_level && _liveMessage.user_level.count)
     {
         UILabel * label = [UILabel new];
-        label.text = [NSString stringWithFormat:@" UL%02ld ", [_liveMessage.user_level.firstObject integerValue]];
+        label.text = [NSString stringWithFormat:@" UL%02ld ", (long)[_liveMessage.user_level.firstObject integerValue]];
         label.textColor = [UIColor whiteColor];
         label.font = font;
         label.backgroundColor = [UIColor orangeColor];

@@ -86,7 +86,7 @@
                 for (int i = 1; i == 1 || ![self isFirstInLine:indexPath]; ++i) {
                     UICollectionViewLayoutAttributes *newHorizontalLayoutItem = [self layoutAttributesForDecorationViewOfKind:@"Horizontal" atIndexPath:indexPath];
                     [layoutAttributes addObject:newHorizontalLayoutItem];
-                    rect = newHorizontalLayoutItem.frame;
+//                    rect = newHorizontalLayoutItem.frame;
                     indexPath = [NSIndexPath indexPathForItem:thisLayoutItem.indexPath.row + i inSection:thisLayoutItem.indexPath.section];
                 }
             }

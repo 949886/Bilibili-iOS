@@ -66,8 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    __weak typeof(self) weakSelf = self;
-    
+//    __weak typeof(self) weakSelf = self;
     
     self.live = _live;
     if (self.navigationController)

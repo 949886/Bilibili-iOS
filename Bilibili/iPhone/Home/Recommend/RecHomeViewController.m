@@ -52,11 +52,11 @@
     self.imageSlider = imageSlider;
     self.tableView.tableHeaderView = imageSlider;
     
-    @weakify(self);
-    [self.imageSlider handleClickEvent:^(NSInteger index) {
-        @strongify(self);
-        
-        //对不同类型的banner进行不同的操作(bangumi:番剧 weblink:网页 apk:游戏广告)
+//    @weakify(self);
+//    [self.imageSlider handleClickEvent:^(NSInteger index) {
+//        @strongify(self);
+//        
+//        //对不同类型的banner进行不同的操作(bangumi:番剧 weblink:网页 apk:游戏广告)
 //        if(_data.banners.count <= index) return;
 //        BannerModel * banner = _data.banners[index];
 //        
@@ -68,8 +68,8 @@
 //            [navigationController pushViewController:controller animated:YES];
 //        }
 //        
-        //TODO: 跳转到Video和bangumi
-    }];
+//        //TODO: 跳转到Video和bangumi
+//    }];
 
     
     //加载数据

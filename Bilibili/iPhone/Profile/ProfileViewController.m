@@ -38,6 +38,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     AccountModel * account = [AccountManager manager].currentAccount;
     
     if (account == nil)
@@ -53,7 +55,7 @@
         if (account.user.level_info.current_level <= 9 &&
             account.user.level_info.current_level >= 0)
         {
-            NSString * imageName = [NSString stringWithFormat:@"misc_level_whiteLv%ld", account.user.level_info.current_level];
+            NSString * imageName = [NSString stringWithFormat:@"misc_level_whiteLv%ld", (long)account.user.level_info.current_level];
             _profileTitleView.levelImageView.image = [UIImage imageNamed:imageName];
         }
         

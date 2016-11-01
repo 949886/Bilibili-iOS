@@ -99,6 +99,8 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
     UIViewController * controller = self.view.superview.viewController;
     controller.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Button" style:UIBarButtonItemStylePlain target:self action:@selector(callfunc)];
 }

@@ -29,7 +29,7 @@
     _comment = comment;
     
     _usernameLabel.text = comment.member.name;
-    _statusLabel.text = [NSString stringWithFormat:@"#%ld", comment.floor];
+    _statusLabel.text = [NSString stringWithFormat:@"#%ld", (long)comment.floor];
     _contentLabel.text = comment.content.message;
     _repliesLabel.text = [@(comment.rcount) stringValue];
     _likesLabel.text = [@(comment.like) stringValue];
@@ -43,7 +43,7 @@
     if (comment.member.level_info.current_level <= 9 &&
         comment.member.level_info.current_level >= 0)
     {
-        NSString * imageName = [NSString stringWithFormat:@"misc_level_whiteLv%ld", comment.member.level_info.current_level];
+        NSString * imageName = [NSString stringWithFormat:@"misc_level_whiteLv%ld", (long)comment.member.level_info.current_level];
         _levelImageView.image = [UIImage imageNamed:imageName];
     }
     

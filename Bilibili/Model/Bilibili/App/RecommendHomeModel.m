@@ -60,7 +60,7 @@
     for (RecommendElement * element in _elements)
     {
         VideoModel * video = [VideoModel new];
-        video.aid = element.param;
+        video.aid = [element.param integerValue];
         video.title = element.title;
         video.pic = element.cover;
         
@@ -114,7 +114,7 @@
         {
             BangumiModel * bangumi = [BangumiModel new];
             bangumi.title = element.title;
-            bangumi.bangumi_id = element.param;
+            bangumi.bangumi_id = [element.param integerValue];
             bangumi.newest_ep_index = (long)element.index;
             bangumi.pub_time = element.mtime;
             

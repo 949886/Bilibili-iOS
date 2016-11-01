@@ -46,6 +46,8 @@
 		DF3D41111D35522E00CEA0DE /* IPadHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3D41101D35522E00CEA0DE /* IPadHomeCell.m */; };
 		DF3D8B261D369FED006CD0F8 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3D8B251D369FED006CD0F8 /* YYFPSLabel.m */; };
 		DF457AB91D3A35F700F019F0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF457AB81D3A35F700F019F0 /* HomeViewController.m */; };
+		DF45DF781D31205C00B3E0E0 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF45DF771D31205C00B3E0E0 /* 3.jpg */; };
+		DF45DF7A1D31206900B3E0E0 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF45DF791D31206900B3E0E0 /* 1.jpg */; };
 		DF4969931D7B602800174CDD /* SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4969921D7B602800174CDD /* SegmentedControl.m */; };
 		DF4969961D7B604600174CDD /* GradientImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4969951D7B604600174CDD /* GradientImageView.m */; };
 		DF4969A91D7B635600174CDD /* IPadLiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF49699F1D7B635600174CDD /* IPadLiveCell.xib */; };
@@ -178,6 +180,7 @@
 		DFB11AAD1DA3D26E0018C334 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1A39E91DA3CAB800DD2C72 /* OpenGLES.framework */; };
 		DFB11AAF1DA3D2A80018C334 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF383221DA3C95400C55083 /* VideoToolbox.framework */; };
 		DFB11AB11DA3D2AD0018C334 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB11AB01DA3D2AD0018C334 /* QuartzCore.framework */; };
+		DFB11AB51DA3D5630018C334 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB11AB41DA3D5630018C334 /* IJKMediaFramework.framework */; };
 		DFB3FD631D8D4C08008DDEC5 /* BaseSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3FD601D8D4C08008DDEC5 /* BaseSegmentView.m */; };
 		DFB3FD641D8D4C08008DDEC5 /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3FD621D8D4C08008DDEC5 /* SegmentView.m */; };
 		DFB3FD671D8D5A97008DDEC5 /* ImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB3FD661D8D5A97008DDEC5 /* ImageUtility.m */; };
@@ -207,6 +210,7 @@
 		DFF3831C1DA3BEE600C55083 /* Danmakus.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF3830E1DA3BEE600C55083 /* Danmakus.m */; };
 		DFF3831D1DA3BEE600C55083 /* DanmakuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF383111DA3BEE600C55083 /* DanmakuLayer.m */; };
 		DFF3831E1DA3BEE600C55083 /* DanmakuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF383131DA3BEE600C55083 /* DanmakuView.m */; };
+		DFF6BB2E1D32AA8B00DA8505 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFF6BB2D1D32AA8B00DA8505 /* 2.jpg */; };
 		DFF709221D96ACF3007F44C2 /* VideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF709211D96ACF3007F44C2 /* VideoPlayerController.m */; };
 		DFF709251D96AD39007F44C2 /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF709241D96AD39007F44C2 /* VideoPlayer.m */; };
 		DFF817F61D7EEBF2005C07EC /* ExButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF817F51D7EEBF2005C07EC /* ExButton.m */; };
@@ -308,6 +312,8 @@
 		DF3D8B251D369FED006CD0F8 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		DF457AB71D3A35F700F019F0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		DF457AB81D3A35F700F019F0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		DF45DF771D31205C00B3E0E0 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		DF45DF791D31206900B3E0E0 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		DF4969911D7B602800174CDD /* SegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedControl.h; sourceTree = "<group>"; };
 		DF4969921D7B602800174CDD /* SegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedControl.m; sourceTree = "<group>"; };
 		DF4969941D7B604600174CDD /* GradientImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientImageView.h; sourceTree = "<group>"; };
@@ -536,6 +542,7 @@
 		DFB11AA21DA3D15E0018C334 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		DFB11AA81DA3D2160018C334 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DFB11AB01DA3D2AD0018C334 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DFB11AB41DA3D5630018C334 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		DFB3FD5D1D8D4AE5008DDEC5 /* BilibiliEnumeration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BilibiliEnumeration.h; sourceTree = "<group>"; };
 		DFB3FD5F1D8D4C08008DDEC5 /* BaseSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSegmentView.h; sourceTree = "<group>"; };
 		DFB3FD601D8D4C08008DDEC5 /* BaseSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSegmentView.m; sourceTree = "<group>"; };
@@ -596,6 +603,7 @@
 		DFF383131DA3BEE600C55083 /* DanmakuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuView.m; sourceTree = "<group>"; };
 		DFF383211DA3C95400C55083 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		DFF383221DA3C95400C55083 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		DFF6BB2D1D32AA8B00DA8505 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		DFF709201D96ACF3007F44C2 /* VideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerController.h; sourceTree = "<group>"; };
 		DFF709211D96ACF3007F44C2 /* VideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerController.m; sourceTree = "<group>"; };
 		DFF709231D96AD39007F44C2 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
@@ -621,6 +629,7 @@
 				DFB11AB11DA3D2AD0018C334 /* QuartzCore.framework in Frameworks */,
 				DFB11AAF1DA3D2A80018C334 /* VideoToolbox.framework in Frameworks */,
 				DFB11AAD1DA3D26E0018C334 /* OpenGLES.framework in Frameworks */,
+				DFB11AB51DA3D5630018C334 /* IJKMediaFramework.framework in Frameworks */,
 				DFB11AAB1DA3D24A0018C334 /* MediaPlayer.framework in Frameworks */,
 				DFB11AAA1DA3D2400018C334 /* AVFoundation.framework in Frameworks */,
 				DFB11AA91DA3D2160018C334 /* CoreGraphics.framework in Frameworks */,
@@ -808,6 +817,7 @@
 		DF3D8B221D369FA3006CD0F8 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				DFB11AB41DA3D5630018C334 /* IJKMediaFramework.framework */,
 				DF3D8B231D369FED006CD0F8 /* FPS */,
 			);
 			path = Vendor;
@@ -999,6 +1009,16 @@
 				DFDB7CBB1DC398E7004A1B39 /* PlayerView.m */,
 			);
 			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		DF5DD2691D2A688A007A9175 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF45DF791D31206900B3E0E0 /* 1.jpg */,
+				DFF6BB2D1D32AA8B00DA8505 /* 2.jpg */,
+				DF45DF771D31205C00B3E0E0 /* 3.jpg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DF5DD2741D2AA466007A9175 /* Device */ = {
@@ -1293,7 +1313,9 @@
 		DF6E25951D27B7FD008473FA = {
 			isa = PBXGroup;
 			children = (
+				DFD931F11D5A691A0082E3A5 /* Scripts */,
 				DF3D8B221D369FA3006CD0F8 /* Vendor */,
+				DF5DD2691D2A688A007A9175 /* Resources */,
 				DF6E25A01D27B7FD008473FA /* Bilibili */,
 				DF6E25BD1D27B7FD008473FA /* BilibiliTests */,
 				DF6E25C81D27B7FD008473FA /* BilibiliUITests */,
@@ -1830,6 +1852,13 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		DFD931F11D5A691A0082E3A5 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		DFEDE7E21D79855B006BD7BC /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -2064,6 +2093,7 @@
 				DFE80D4B1D7A011D0023F2B3 /* BangumiHomeView.xib in Resources */,
 				DF77E0A21D801D7E009A4E89 /* CategoriesViewController.js in Resources */,
 				DF32B6E51DAFB3A300CF33FA /* RelativeVideoCell.xib in Resources */,
+				DF45DF781D31205C00B3E0E0 /* 3.jpg in Resources */,
 				DFAEBDF31D81D5FD002766F4 /* BangumiHomeHeader.xib in Resources */,
 				DFA014821D86E7C600C69383 /* BangumiRecommendCell.xib in Resources */,
 				DF32B6F01DAFB3A300CF33FA /* VideoViewController.xib in Resources */,
@@ -2083,6 +2113,7 @@
 				DF4969A91D7B635600174CDD /* IPadLiveCell.xib in Resources */,
 				DF6E25B11D27B7FD008473FA /* Assets.xcassets in Resources */,
 				DF945ABE1DAE450400045C21 /* BrightnessView.xib in Resources */,
+				DF45DF7A1D31206900B3E0E0 /* 1.jpg in Resources */,
 				DF78FAD51D806AAD00ABB6D3 /* ConcernedCell.xib in Resources */,
 				DFAC3F0A1DAB8A220076EB50 /* LiveViewController.xib in Resources */,
 				DF2E51341D7B28CA002F2EA4 /* RootViewController.xib in Resources */,
@@ -2099,6 +2130,7 @@
 				DFAEBDEE1D81A950002766F4 /* RecBangumiFooter.xib in Resources */,
 				DF87B1971DB51E9800C6FED8 /* BangumiHeaderController.xib in Resources */,
 				DF13D1401D7A05430052164D /* LiveHomeView.xib in Resources */,
+				DFF6BB2E1D32AA8B00DA8505 /* 2.jpg in Resources */,
 				DF5DD2971D2ADA94007A9175 /* LaunchScreen.storyboard in Resources */,
 				DF2491091D33B17C004A6C91 /* iPhone.storyboard in Resources */,
 				DF87B1B41DB5228100C6FED8 /* LiveRankCell.xib in Resources */,
