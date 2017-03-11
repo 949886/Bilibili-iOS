@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		987C69DB1E72532700B28199 /* BilibiliAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987C69D11E72532700B28199 /* BilibiliAPI.framework */; };
+		987C69E01E72532700B28199 /* BilibiliAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C69DF1E72532700B28199 /* BilibiliAPITests.swift */; };
+		987C69E21E72532700B28199 /* BilibiliAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 987C69D41E72532700B28199 /* BilibiliAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		987C69F11E72859D00B28199 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C69F01E72859D00B28199 /* BaseAPI.swift */; };
+		987C6A1A1E72984400B28199 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987C6A191E72983600B28199 /* Alamofire.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		987C69DC1E72532700B28199 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 987C69C81E72532700B28199 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 987C69D01E72532700B28199;
+			remoteInfo = BilibiliAPI;
+		};
+		987C6A181E72983600B28199 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 987C6A141E72983600B28199 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		987C69D11E72532700B28199 /* BilibiliAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BilibiliAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		987C69D41E72532700B28199 /* BilibiliAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BilibiliAPI.h; sourceTree = "<group>"; };
+		987C69D51E72532700B28199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		987C69DA1E72532700B28199 /* BilibiliAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BilibiliAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		987C69DF1E72532700B28199 /* BilibiliAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilibiliAPITests.swift; sourceTree = "<group>"; };
+		987C69E11E72532700B28199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		987C69EB1E72535A00B28199 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		987C69F01E72859D00B28199 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		987C6A141E72983600B28199 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		987C69CD1E72532700B28199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				987C6A1A1E72984400B28199 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		987C69D71E72532700B28199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				987C69DB1E72532700B28199 /* BilibiliAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		987C69C71E72532700B28199 = {
+			isa = PBXGroup;
+			children = (
+				987C6A141E72983600B28199 /* Alamofire.xcodeproj */,
+				987C69D31E72532700B28199 /* BilibiliAPI */,
+				987C69DE1E72532700B28199 /* BilibiliAPITests */,
+				987C69D21E72532700B28199 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		987C69D21E72532700B28199 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				987C69D11E72532700B28199 /* BilibiliAPI.framework */,
+				987C69DA1E72532700B28199 /* BilibiliAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		987C69D31E72532700B28199 /* BilibiliAPI */ = {
+			isa = PBXGroup;
+			children = (
+				987C69D41E72532700B28199 /* BilibiliAPI.h */,
+				987C69D51E72532700B28199 /* Info.plist */,
+				987C69EB1E72535A00B28199 /* module.modulemap */,
+				987C69F01E72859D00B28199 /* BaseAPI.swift */,
+			);
+			path = BilibiliAPI;
+			sourceTree = "<group>";
+		};
+		987C69DE1E72532700B28199 /* BilibiliAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				987C69DF1E72532700B28199 /* BilibiliAPITests.swift */,
+				987C69E11E72532700B28199 /* Info.plist */,
+			);
+			path = BilibiliAPITests;
+			sourceTree = "<group>";
+		};
+		987C6A151E72983600B28199 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				987C6A191E72983600B28199 /* Alamofire.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		987C69CE1E72532700B28199 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				987C69E21E72532700B28199 /* BilibiliAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		987C69D01E72532700B28199 /* BilibiliAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 987C69E51E72532700B28199 /* Build configuration list for PBXNativeTarget "BilibiliAPI" */;
+			buildPhases = (
+				987C69CC1E72532700B28199 /* Sources */,
+				987C69CD1E72532700B28199 /* Frameworks */,
+				987C69CE1E72532700B28199 /* Headers */,
+				987C69CF1E72532700B28199 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BilibiliAPI;
+			productName = BilibiliAPI;
+			productReference = 987C69D11E72532700B28199 /* BilibiliAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		987C69D91E72532700B28199 /* BilibiliAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 987C69E81E72532700B28199 /* Build configuration list for PBXNativeTarget "BilibiliAPITests" */;
+			buildPhases = (
+				987C69D61E72532700B28199 /* Sources */,
+				987C69D71E72532700B28199 /* Frameworks */,
+				987C69D81E72532700B28199 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				987C69DD1E72532700B28199 /* PBXTargetDependency */,
+			);
+			name = BilibiliAPITests;
+			productName = BilibiliAPITests;
+			productReference = 987C69DA1E72532700B28199 /* BilibiliAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		987C69C81E72532700B28199 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = YaeSakura;
+				TargetAttributes = {
+					987C69D01E72532700B28199 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V667438P6G;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					987C69D91E72532700B28199 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 987C69CB1E72532700B28199 /* Build configuration list for PBXProject "BilibiliAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 987C69C71E72532700B28199;
+			productRefGroup = 987C69D21E72532700B28199 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 987C6A151E72983600B28199 /* Products */;
+					ProjectRef = 987C6A141E72983600B28199 /* Alamofire.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				987C69D01E72532700B28199 /* BilibiliAPI */,
+				987C69D91E72532700B28199 /* BilibiliAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		987C6A191E72983600B28199 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 987C6A181E72983600B28199 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		987C69CF1E72532700B28199 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		987C69D81E72532700B28199 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		987C69CC1E72532700B28199 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				987C69F11E72859D00B28199 /* BaseAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		987C69D61E72532700B28199 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				987C69E01E72532700B28199 /* BilibiliAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		987C69DD1E72532700B28199 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 987C69D01E72532700B28199 /* BilibiliAPI */;
+			targetProxy = 987C69DC1E72532700B28199 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		987C69E31E72532700B28199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		987C69E41E72532700B28199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		987C69E61E72532700B28199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = V667438P6G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BilibiliAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YaeSakura.BilibiliAPI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		987C69E71E72532700B28199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = V667438P6G;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BilibiliAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YaeSakura.BilibiliAPI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		987C69E91E72532700B28199 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BilibiliAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YaeSakura.BilibiliAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		987C69EA1E72532700B28199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = BilibiliAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YaeSakura.BilibiliAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		987C69CB1E72532700B28199 /* Build configuration list for PBXProject "BilibiliAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				987C69E31E72532700B28199 /* Debug */,
+				987C69E41E72532700B28199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		987C69E51E72532700B28199 /* Build configuration list for PBXNativeTarget "BilibiliAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				987C69E61E72532700B28199 /* Debug */,
+				987C69E71E72532700B28199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		987C69E81E72532700B28199 /* Build configuration list for PBXNativeTarget "BilibiliAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				987C69E91E72532700B28199 /* Debug */,
+				987C69EA1E72532700B28199 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 987C69C81E72532700B28199 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Bilibili {
+    umbrella header "Bilibili.h"
+    
+    export *
+    module * { export * }
+}
