@@ -67,6 +67,7 @@
         [self setViewControllers:viewControllers];
     }
     
+
     [self setValue:tabBar forKey:@"tabBar"];
 }
 

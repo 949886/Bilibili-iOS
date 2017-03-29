@@ -22,18 +22,8 @@ PODS:
     - JSPatch/Core (= 1.1)
   - JSPatch/Core (1.1)
   - MJRefresh (3.1.12)
-  - ReactiveCocoa (4.0.0):
-    - ReactiveCocoa/UI (= 4.0.0)
-    - Result (~> 1.0.1)
-  - ReactiveCocoa/Core (4.0.0):
-    - ReactiveCocoa/no-arc
-    - Result (~> 1.0.1)
-  - ReactiveCocoa/no-arc (4.0.0):
-    - Result (~> 1.0.1)
-  - ReactiveCocoa/UI (4.0.0):
-    - ReactiveCocoa/Core
-    - Result (~> 1.0.1)
-  - Result (1.0.2)
+  - ReactiveObjC (2.1.2)
+  - Reveal-SDK (4)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -48,7 +38,8 @@ DEPENDENCIES:
   - GPUImage (~> 0.1)
   - JSPatch (~> 1.1)
   - MJRefresh (~> 3.1)
-  - ReactiveCocoa (= 4.0.0)
+  - ReactiveObjC (~> 2.1)
+  - Reveal-SDK (~> 4)
   - SDWebImage (~> 3.8)
   - WYPopoverController (= 0.3.9)
   - YYKit (~> 1.0)
@@ -59,10 +50,12 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   JSPatch: ade285ad1d8f06146ed6054a39cef87509453299
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  ReactiveCocoa: 69be555be30674b07a86b60a91b855063841acc0
-  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
+  Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WYPopoverController: a9db25ac2841a686acdc0f3a99bdb21545db32f4
   YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 641c164a0e5f50975428f9caba2b62e24288d910
+
+COCOAPODS: 1.1.1

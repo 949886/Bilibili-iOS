@@ -11,7 +11,7 @@
 @implementation CategoryCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
 }
 
 @end

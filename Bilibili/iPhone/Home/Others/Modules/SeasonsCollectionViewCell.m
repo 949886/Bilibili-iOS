@@ -13,7 +13,7 @@
 
 - (void)awakeFromNib
 {
-    
+    [super awakeFromNib];
 }
 
 -(void)setSelected:(BOOL)selected

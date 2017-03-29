@@ -7,6 +7,7 @@
 //
 
 #import "CustomTabBar.h"
+#import "extension.h"
 
 @interface ImagePair : NSObject 
 @property (nonatomic, strong) UIImage * normalImage;

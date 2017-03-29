@@ -12,8 +12,7 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
-
+    [super awakeFromNib];
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

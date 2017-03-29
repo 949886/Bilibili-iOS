@@ -69,7 +69,7 @@
     self.title = [_webView stringByEvaluatingJavaScriptFromString:@"document.title;"];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     
 }

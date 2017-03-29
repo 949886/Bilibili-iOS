@@ -90,6 +90,7 @@ typedef NS_ENUM(NSInteger, VideoPlayerGestureType)
 
 -(void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initializeVideoPlayer];
 }
 

@@ -15,8 +15,8 @@
 #import "models.h"
 #import "BilibiliAPI.h"
 
-#import "YYKit.h"
-#import "ReactiveCocoa.h"
+@import YYKit;
+@import ReactiveObjC;
 
 @interface IPadHomeViewController ()
 

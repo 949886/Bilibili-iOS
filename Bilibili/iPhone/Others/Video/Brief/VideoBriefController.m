@@ -17,7 +17,7 @@
 
 @import YYKit;
 @import SDWebImage;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface VideoBriefController ()
 

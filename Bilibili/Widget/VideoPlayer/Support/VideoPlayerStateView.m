@@ -28,6 +28,8 @@
 
 -(void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     NSArray * images = @[[UIImage imageNamed:@"ani_loading_1"],
                          [UIImage imageNamed:@"ani_loading_2"],
                          [UIImage imageNamed:@"ani_loading_3"],

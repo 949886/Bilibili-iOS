@@ -9,7 +9,7 @@
 #import "CommentCell.h"
 
 @import SDWebImage;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface CommentCell ()
 
@@ -21,7 +21,7 @@
 
 - (void)awakeFromNib
 {
-    
+    [super awakeFromNib];
 }
 
 -(void)setup:(CommentModel *)comment

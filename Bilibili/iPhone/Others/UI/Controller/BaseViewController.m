@@ -11,7 +11,7 @@
 @import YYKit;
 @import MJRefresh;
 @import SDWebImage;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface BaseViewController ()
 

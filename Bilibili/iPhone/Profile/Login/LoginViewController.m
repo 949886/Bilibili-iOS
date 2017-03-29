@@ -14,7 +14,7 @@
 #import "BilibiliException.h"
 
 @import YYKit;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface LoginViewController ()
 

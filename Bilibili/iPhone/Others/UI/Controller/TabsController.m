@@ -10,7 +10,7 @@
 
 @import YYKit;
 @import MJRefresh;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface TabsController ()
 

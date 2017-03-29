@@ -9,7 +9,7 @@
 #import "RootViewController.h"
 
 @import YYKit;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface RootViewController ()
 

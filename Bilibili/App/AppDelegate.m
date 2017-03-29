@@ -69,7 +69,11 @@ void handleException(NSException * exception);
     
     //Setup Exception Handler
     NSSetUncaughtExceptionHandler(handleException);
-
+    
+#ifdef DEBUG
+    NSLog(@"%@", [NSBundle mainBundle].bundlePath);
+#endif
+    
     return YES;
 }
 

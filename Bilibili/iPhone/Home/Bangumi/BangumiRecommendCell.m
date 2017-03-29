@@ -16,7 +16,7 @@
 
 @import YYKit;
 @import SDWebImage;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface BangumiRecommendCell ()
 
@@ -35,6 +35,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initialize];
 }
 

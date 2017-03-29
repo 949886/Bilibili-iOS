@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		919EC71CC97ED5A0BE0B39B6 /* Pods_Bilibili.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C8341A8AB8512F4ECE81E2 /* Pods_Bilibili.framework */; };
+		6E0C32FCA08275D5CCCE2413 /* Pods_Bilibili.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B744672F5E3C81B92BA0E4 /* Pods_Bilibili.framework */; };
 		DF073CE81DB3C4D300D014EB /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = DF073CE71DB3C4D300D014EB /* Toast.m */; };
 		DF131FE51D27BA080009186E /* BilibiliAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = DF131FE41D27BA080009186E /* BilibiliAPI.m */; };
 		DF13D1401D7A05430052164D /* LiveHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF13D13F1D7A05430052164D /* LiveHomeView.xib */; };
@@ -46,8 +46,6 @@
 		DF3D41111D35522E00CEA0DE /* IPadHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3D41101D35522E00CEA0DE /* IPadHomeCell.m */; };
 		DF3D8B261D369FED006CD0F8 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3D8B251D369FED006CD0F8 /* YYFPSLabel.m */; };
 		DF457AB91D3A35F700F019F0 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF457AB81D3A35F700F019F0 /* HomeViewController.m */; };
-		DF45DF781D31205C00B3E0E0 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF45DF771D31205C00B3E0E0 /* 3.jpg */; };
-		DF45DF7A1D31206900B3E0E0 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DF45DF791D31206900B3E0E0 /* 1.jpg */; };
 		DF4969931D7B602800174CDD /* SegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4969921D7B602800174CDD /* SegmentedControl.m */; };
 		DF4969961D7B604600174CDD /* GradientImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4969951D7B604600174CDD /* GradientImageView.m */; };
 		DF4969A91D7B635600174CDD /* IPadLiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF49699F1D7B635600174CDD /* IPadLiveCell.xib */; };
@@ -210,7 +208,6 @@
 		DFF3831C1DA3BEE600C55083 /* Danmakus.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF3830E1DA3BEE600C55083 /* Danmakus.m */; };
 		DFF3831D1DA3BEE600C55083 /* DanmakuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF383111DA3BEE600C55083 /* DanmakuLayer.m */; };
 		DFF3831E1DA3BEE600C55083 /* DanmakuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF383131DA3BEE600C55083 /* DanmakuView.m */; };
-		DFF6BB2E1D32AA8B00DA8505 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DFF6BB2D1D32AA8B00DA8505 /* 2.jpg */; };
 		DFF709221D96ACF3007F44C2 /* VideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF709211D96ACF3007F44C2 /* VideoPlayerController.m */; };
 		DFF709251D96AD39007F44C2 /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF709241D96AD39007F44C2 /* VideoPlayer.m */; };
 		DFF817F61D7EEBF2005C07EC /* ExButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF817F51D7EEBF2005C07EC /* ExButton.m */; };
@@ -240,10 +237,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		96C8341A8AB8512F4ECE81E2 /* Pods_Bilibili.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bilibili.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9736F374331705AF5462ED7 /* Pods-Bilibili.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bilibili.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili.release.xcconfig"; sourceTree = "<group>"; };
-		CC6E412FFCB7787351C37349 /* Pods-Bilibili.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bilibili.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili.debug.xcconfig"; sourceTree = "<group>"; };
-		D6CAE092211562C42B867E35 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E59687B18D376156FBDA3E0 /* Pods-Bilibili.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bilibili.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili.debug.xcconfig"; sourceTree = "<group>"; };
+		B6B744672F5E3C81B92BA0E4 /* Pods_Bilibili.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bilibili.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D790438BA30D5713D3C7CF56 /* Pods-Bilibili.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bilibili.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili.release.xcconfig"; sourceTree = "<group>"; };
 		DF073CE61DB3C4D300D014EB /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
 		DF073CE71DB3C4D300D014EB /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		DF131FE31D27BA080009186E /* BilibiliAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BilibiliAPI.h; sourceTree = "<group>"; };
@@ -312,8 +308,6 @@
 		DF3D8B251D369FED006CD0F8 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		DF457AB71D3A35F700F019F0 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		DF457AB81D3A35F700F019F0 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		DF45DF771D31205C00B3E0E0 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		DF45DF791D31206900B3E0E0 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		DF4969911D7B602800174CDD /* SegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedControl.h; sourceTree = "<group>"; };
 		DF4969921D7B602800174CDD /* SegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedControl.m; sourceTree = "<group>"; };
 		DF4969941D7B604600174CDD /* GradientImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientImageView.h; sourceTree = "<group>"; };
@@ -603,7 +597,6 @@
 		DFF383131DA3BEE600C55083 /* DanmakuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DanmakuView.m; sourceTree = "<group>"; };
 		DFF383211DA3C95400C55083 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		DFF383221DA3C95400C55083 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		DFF6BB2D1D32AA8B00DA8505 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		DFF709201D96ACF3007F44C2 /* VideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerController.h; sourceTree = "<group>"; };
 		DFF709211D96ACF3007F44C2 /* VideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerController.m; sourceTree = "<group>"; };
 		DFF709231D96AD39007F44C2 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
@@ -637,7 +630,7 @@
 				DFB11AA71DA3D2160018C334 /* CoreVideo.framework in Frameworks */,
 				DFB11AA01DA3D1090018C334 /* libbz2.tbd in Frameworks */,
 				DFB11A9E1DA3D0F40018C334 /* libz.tbd in Frameworks */,
-				919EC71CC97ED5A0BE0B39B6 /* Pods_Bilibili.framework in Frameworks */,
+				6E0C32FCA08275D5CCCE2413 /* Pods_Bilibili.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,11 +651,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EA9270E506F3A222DAC6E45 /* Pods */ = {
+		AC24CCE3B859E0B02E9B78C8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CC6E412FFCB7787351C37349 /* Pods-Bilibili.debug.xcconfig */,
-				B9736F374331705AF5462ED7 /* Pods-Bilibili.release.xcconfig */,
+				1E59687B18D376156FBDA3E0 /* Pods-Bilibili.debug.xcconfig */,
+				D790438BA30D5713D3C7CF56 /* Pods-Bilibili.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -682,8 +675,7 @@
 				DF1A39E31DA3CA7E00DD2C72 /* AudioToolbox.framework */,
 				DFF383211DA3C95400C55083 /* CoreVideo.framework */,
 				DFF383221DA3C95400C55083 /* VideoToolbox.framework */,
-				D6CAE092211562C42B867E35 /* Pods.framework */,
-				96C8341A8AB8512F4ECE81E2 /* Pods_Bilibili.framework */,
+				B6B744672F5E3C81B92BA0E4 /* Pods_Bilibili.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1014,9 +1006,6 @@
 		DF5DD2691D2A688A007A9175 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DF45DF791D31206900B3E0E0 /* 1.jpg */,
-				DFF6BB2D1D32AA8B00DA8505 /* 2.jpg */,
-				DF45DF771D31205C00B3E0E0 /* 3.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1321,7 +1310,7 @@
 				DF6E25C81D27B7FD008473FA /* BilibiliUITests */,
 				C24DECB5D827BE19FEB519D7 /* Frameworks */,
 				DF6E259F1D27B7FD008473FA /* Products */,
-				2EA9270E506F3A222DAC6E45 /* Pods */,
+				AC24CCE3B859E0B02E9B78C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1987,13 +1976,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DF6E25CE1D27B7FD008473FA /* Build configuration list for PBXNativeTarget "Bilibili" */;
 			buildPhases = (
-				87D13057BD5CB5059871C251 /* [CP] Check Pods Manifest.lock */,
+				13B73327F6058EE17EB4E352 /* [CP] Check Pods Manifest.lock */,
 				DF6E259A1D27B7FD008473FA /* Sources */,
 				DF6E259B1D27B7FD008473FA /* Frameworks */,
 				DF6E259C1D27B7FD008473FA /* Resources */,
-				1876260F9AB4A5B8B1F61B70 /* [CP] Embed Pods Frameworks */,
-				C50F9EEBF8289DF892BE3849 /* [CP] Copy Pods Resources */,
-				073C9C52EE49CA00B2B9FB57 /* Embed Pods Frameworks */,
+				51D2085F218591799DA2451F /* [CP] Embed Pods Frameworks */,
+				D4DF69BA88938F76DF8B2979 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2052,6 +2040,7 @@
 					DF6E259D1D27B7FD008473FA = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = V667438P6G;
+						LastSwiftMigration = 0810;
 					};
 					DF6E25B91D27B7FD008473FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -2093,7 +2082,6 @@
 				DFE80D4B1D7A011D0023F2B3 /* BangumiHomeView.xib in Resources */,
 				DF77E0A21D801D7E009A4E89 /* CategoriesViewController.js in Resources */,
 				DF32B6E51DAFB3A300CF33FA /* RelativeVideoCell.xib in Resources */,
-				DF45DF781D31205C00B3E0E0 /* 3.jpg in Resources */,
 				DFAEBDF31D81D5FD002766F4 /* BangumiHomeHeader.xib in Resources */,
 				DFA014821D86E7C600C69383 /* BangumiRecommendCell.xib in Resources */,
 				DF32B6F01DAFB3A300CF33FA /* VideoViewController.xib in Resources */,
@@ -2113,7 +2101,6 @@
 				DF4969A91D7B635600174CDD /* IPadLiveCell.xib in Resources */,
 				DF6E25B11D27B7FD008473FA /* Assets.xcassets in Resources */,
 				DF945ABE1DAE450400045C21 /* BrightnessView.xib in Resources */,
-				DF45DF7A1D31206900B3E0E0 /* 1.jpg in Resources */,
 				DF78FAD51D806AAD00ABB6D3 /* ConcernedCell.xib in Resources */,
 				DFAC3F0A1DAB8A220076EB50 /* LiveViewController.xib in Resources */,
 				DF2E51341D7B28CA002F2EA4 /* RootViewController.xib in Resources */,
@@ -2130,7 +2117,6 @@
 				DFAEBDEE1D81A950002766F4 /* RecBangumiFooter.xib in Resources */,
 				DF87B1971DB51E9800C6FED8 /* BangumiHeaderController.xib in Resources */,
 				DF13D1401D7A05430052164D /* LiveHomeView.xib in Resources */,
-				DFF6BB2E1D32AA8B00DA8505 /* 2.jpg in Resources */,
 				DF5DD2971D2ADA94007A9175 /* LaunchScreen.storyboard in Resources */,
 				DF2491091D33B17C004A6C91 /* iPhone.storyboard in Resources */,
 				DF87B1B41DB5228100C6FED8 /* LiveRankCell.xib in Resources */,
@@ -2157,22 +2143,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		073C9C52EE49CA00B2B9FB57 /* Embed Pods Frameworks */ = {
+		13B73327F6058EE17EB4E352 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		1876260F9AB4A5B8B1F61B70 /* [CP] Embed Pods Frameworks */ = {
+		51D2085F218591799DA2451F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2187,22 +2173,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		87D13057BD5CB5059871C251 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C50F9EEBF8289DF892BE3849 /* [CP] Copy Pods Resources */ = {
+		D4DF69BA88938F76DF8B2979 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2538,7 +2509,7 @@
 		};
 		DF6E25CF1D27B7FD008473FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC6E412FFCB7787351C37349 /* Pods-Bilibili.debug.xcconfig */;
+			baseConfigurationReference = 1E59687B18D376156FBDA3E0 /* Pods-Bilibili.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -2558,8 +2529,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Danmaku/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LunarEclipse.Bilibili;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarEclipse.Bilibilix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -2567,7 +2539,7 @@
 		};
 		DF6E25D01D27B7FD008473FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9736F374331705AF5462ED7 /* Pods-Bilibili.release.xcconfig */;
+			baseConfigurationReference = D790438BA30D5713D3C7CF56 /* Pods-Bilibili.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -2586,8 +2558,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Danmaku/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LunarEclipse.Bilibili;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LunarEclipse.Bilibilix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 			};

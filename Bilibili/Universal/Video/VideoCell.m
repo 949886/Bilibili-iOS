@@ -27,6 +27,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.clipsToBounds = YES;
     _titleLabel.verticalAlignment = VerticalAlignmentTop;

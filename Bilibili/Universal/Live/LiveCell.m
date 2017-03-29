@@ -24,6 +24,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     _titleLabel.verticalAlignment = VerticalAlignmentTop;
 }
 

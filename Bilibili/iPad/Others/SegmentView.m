@@ -8,7 +8,7 @@
 
 @import YYKit;
 @import SDWebImage;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 #import "SegmentView.h"
 #import "WebViewControll.h"

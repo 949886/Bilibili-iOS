@@ -20,7 +20,7 @@
 @import YYKit;
 @import GPUImage;
 @import SDWebImage;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 @interface VideoViewController ()
 

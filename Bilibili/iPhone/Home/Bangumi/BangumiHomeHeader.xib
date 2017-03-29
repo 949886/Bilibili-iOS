@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +17,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l26-ah-qI3" customClass="ImageSlider">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="120"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="Sbk-bW-EcG"/>
                     </constraints>
@@ -25,7 +29,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="连载动画" image="home_region_icon_33">
-                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="onClickUnfinishedBangumiButton:" destination="nB9-tB-EBC" eventType="touchUpInside" id="eY2-Rz-Pcy"/>
@@ -38,7 +42,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="完结动画" image="home_region_icon_32">
-                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="onClickFinishedBangumiButton:" destination="nB9-tB-EBC" eventType="touchUpInside" id="zez-cN-Qc7"/>
@@ -51,7 +55,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="国产动画" image="home_region_icon_153">
-                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="onClickTianchaoBangumiButton:" destination="nB9-tB-EBC" eventType="touchUpInside" id="9pC-Hq-OaR"/>
@@ -64,7 +68,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="官方延伸" image="home_region_icon_152">
-                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="onClickExtraButton:" destination="nB9-tB-EBC" eventType="touchUpInside" id="ozJ-kS-RbO"/>
@@ -72,7 +76,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHL-mM-yg0" customClass="ExButton">
                     <rect key="frame" x="12" y="208" width="120" height="50"/>
-                    <color key="backgroundColor" red="0.9946141242980957" green="0.74046725034713745" blue="0.2800731360912323" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.9946141242980957" green="0.74046725034713745" blue="0.2800731360912323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
                     <state key="normal" title=" 追 番 " image="home_bangumi_tableHead_followIcon"/>
                     <userDefinedRuntimeAttributes>
@@ -86,7 +90,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZk-MG-VKy">
                     <rect key="frame" x="268" y="208" width="120" height="50"/>
-                    <color key="backgroundColor" red="0.43204545974731445" green="0.68966621160507202" blue="0.99884217977523804" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.43204545974731445" green="0.68966621160507202" blue="0.99884217977523804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="16"/>
                     <state key="normal" title=" 索 引" image="home_bangumi_tableHead_indexIcon"/>
                     <userDefinedRuntimeAttributes>
@@ -100,7 +104,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4e-kG-kqk">
                     <rect key="frame" x="140" y="208" width="120" height="50"/>
-                    <color key="backgroundColor" red="0.988960862159729" green="0.40672391653060913" blue="0.43459877371788025" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.988960862159729" green="0.40672391653060913" blue="0.43459877371788025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
                     <state key="normal" title="放送表" image="home_bangumi_tableHead_week6"/>
                     <userDefinedRuntimeAttributes>

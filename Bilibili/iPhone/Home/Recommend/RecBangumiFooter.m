@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     _bangumiTimelineButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     _bangumiCategoryButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
 }

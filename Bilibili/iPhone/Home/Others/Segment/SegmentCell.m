@@ -33,7 +33,7 @@
 
 @import YYKit;
 @import SDWebImage;
-@import ReactiveCocoa;
+@import ReactiveObjC;
 
 
 #pragma mark - SegmentCell
@@ -66,6 +66,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initialize];
 }
 

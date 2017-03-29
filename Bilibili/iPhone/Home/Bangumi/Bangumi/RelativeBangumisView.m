@@ -50,6 +50,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initialize];
 }
 
