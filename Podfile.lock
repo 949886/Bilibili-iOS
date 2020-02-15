@@ -1,82 +1,87 @@
 PODS:
-  - CryptoSwift (0.6.7)
-  - GPUImage2 (0.1.0)
-  - HandyJSON (1.6.0)
-  - Hero (0.3.1)
-  - IBAnimatable (3.1.2)
-  - Kingfisher (3.4.0)
-  - MJRefresh (3.1.12)
-  - R.swift (3.2.0):
-    - R.swift.Library (~> 3.0.2)
-  - R.swift.Library (3.0.2)
+  - CryptoSwift (1.3.0)
+  - GPUImage3 (0.1.0)
+  - HandyJSON (5.0.1)
+  - Hero (1.5.0)
+  - IBAnimatable (6.0.0)
+  - Kingfisher (5.13.0):
+    - Kingfisher/Core (= 5.13.0)
+  - Kingfisher/Core (5.13.0)
+  - MJRefresh (3.3.1)
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
   - Reveal-SDK (4)
-  - RxSwift (3.2.0)
-  - Sakura (0.0.1)
-  - SnapKit (3.1.2)
-  - Spring (1.0.3)
-  - SwiftyUserDefaults (3.0.0)
-  - WebViewJavascriptBridge (5.2.0)
-  - Zip (0.6.0)
+  - RxSwift (5.0.1)
+  - Sakura (0.0.10):
+    - Sakura/Core (= 0.0.10)
+    - Sakura/UI (= 0.0.10)
+  - Sakura/Core (0.0.10)
+  - Sakura/UI (0.0.10):
+    - Sakura/Core
+  - SnapKit (5.0.1)
+  - SwiftyUserDefaults (5.0.0)
+  - WebViewJavascriptBridge (6.0.3)
+  - Zip (1.1.0)
 
 DEPENDENCIES:
-  - CryptoSwift (~> 0.6)
-  - GPUImage2 (from `./Bilibili/Podspec/GPUImage2.podspec`)
-  - HandyJSON (from `https://github.com/alibaba/HandyJSON.git`)
-  - Hero (~> 0.3)
-  - IBAnimatable (~> 3.0)
-  - Kingfisher (~> 3.3)
-  - MJRefresh (~> 3.1)
-  - R.swift (~> 3.1)
+  - CryptoSwift (~> 1.3)
+  - GPUImage3 (from `./Bilibili/Podspec/GPUImage3.podspec`)
+  - HandyJSON (~> 5.0.1)
+  - Hero (~> 1.5)
+  - IBAnimatable (~> 6.0)
+  - Kingfisher (~> 5.13)
+  - MJRefresh (~> 3.3)
+  - R.swift (~> 5.1)
   - Reveal-SDK (~> 4)
-  - RxSwift (~> 3.2)
+  - RxSwift (~> 5)
   - Sakura (from `./Sakura`)
-  - SnapKit (~> 3.1)
-  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
-  - SwiftyUserDefaults (~> 3.0)
-  - WebViewJavascriptBridge (~> 5.0)
-  - Zip (~> 0.6)
+  - SnapKit (~> 5.0.0)
+  - SwiftyUserDefaults (~> 5.0)
+  - WebViewJavascriptBridge (~> 6.0)
+  - Zip (~> 1.1)
+
+SPEC REPOS:
+  trunk:
+    - CryptoSwift
+    - HandyJSON
+    - Hero
+    - IBAnimatable
+    - Kingfisher
+    - MJRefresh
+    - R.swift
+    - R.swift.Library
+    - Reveal-SDK
+    - RxSwift
+    - SnapKit
+    - SwiftyUserDefaults
+    - WebViewJavascriptBridge
+    - Zip
 
 EXTERNAL SOURCES:
-  GPUImage2:
-    :podspec: "./Bilibili/Podspec/GPUImage2.podspec"
-  HandyJSON:
-    :git: https://github.com/alibaba/HandyJSON.git
+  GPUImage3:
+    :podspec: "./Bilibili/Podspec/GPUImage3.podspec"
   Sakura:
     :path: "./Sakura"
-  Spring:
-    :branch: swift3
-    :git: https://github.com/MengTo/Spring.git
-
-CHECKOUT OPTIONS:
-  GPUImage2:
-    :commit: 8c3bdee9421ecdbc857bf1992cf8eafb2862129b
-    :git: https://github.com/BradLarson/GPUImage2.git
-  HandyJSON:
-    :commit: 787ea08cf317e1a5b5acf32318283c4bdd36aa76
-    :git: https://github.com/alibaba/HandyJSON.git
-  Spring:
-    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
-    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
-  CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
-  GPUImage2: 4ff31f41a47e240e5474b49d9e83e95e2ff5c562
-  HandyJSON: 75ecc5cfe090cb4743ef880b95039dd6a3cf65a5
-  Hero: 278045543e7e8fcbf331e6493a51f97469a2ff08
-  IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
-  Kingfisher: 5690cfb3d1bddf3a98d679a3a34d0b7294974ed2
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  R.swift: 207a372a2b5977caef440c696a368009460641d1
-  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
+  GPUImage3: 4cf3163a7d7d8a065815a2eff8c272e043ed1dab
+  HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  IBAnimatable: d49f9fee0c401b5b08d31b77256b77fb067e0e92
+  Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
-  RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
-  Sakura: 5b9a3e1fc5e696603118661447377272755f22ab
-  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
-  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
-  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
-  WebViewJavascriptBridge: a00b2d61252aec5207e3263d46fd0fd3cfaf7895
-  Zip: 805fc2fa9d2f05bbb7762d982d7a42ccdcc51f42
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  Sakura: bcb5ef0381d35f05bd9e53affe8d62cc51503dad
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyUserDefaults: 33fcb42bd1feb53a37d873feb62c82967db5f7f6
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: dc7258587c0ea5b5f7e76fa27ad46e9db05ae99a
+PODFILE CHECKSUM: d20c60a0a15104b2bc09f1d7e1447f1d816aa382
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.8.4

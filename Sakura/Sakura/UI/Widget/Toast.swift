@@ -8,14 +8,34 @@
 
 import Foundation
 
-public class Toast {
+public class Toast
+{
     
-    static func makeText(text: String, duration: Double) {
+    private var duration: TimeInterval = 2.5
+    private var delay: TimeInterval = 0
     
+    private var gravity: TimeInterval = 2.5
+    
+    // MARK: Singleton
+    
+    private static let instance: Toast = {
+        let instance = Toast()
+        return instance
+    }()
+    
+    //MARK: Methods
+    
+    public static func makeText(text: String, duration: Double = 2.5) -> Toast {
+        return instance
     }
     
-    func show() {
+    
+    public func show() {
         
+    }
+    
+    public func setGravity(_ loaction: Int, _ offsetX: Float, _ offsetY: Float) -> Toast {
+        return .instance
     }
     
 }
